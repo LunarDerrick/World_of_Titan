@@ -8,7 +8,6 @@ public class Tester {
         Scouting scouting = new Scouting();
         SoldierArrange soldierArrange = new SoldierArrange();
         Titan titan = new Titan();
-        // new commit
     }
 
 }
