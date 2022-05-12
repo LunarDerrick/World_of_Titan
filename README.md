@@ -2,7 +2,7 @@
 UM2022 Y1S2 WIA1002 Data Structure Project
 
 note:
-push = upload
+push = upload;
 pull = download
 
 [IMPORTANT]1st time download project:
