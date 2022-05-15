@@ -34,7 +34,11 @@ public class Tester {
             System.out.println("File not found");
         }
         
+        // display map data
         System.out.println(scouting.toString());
+        
+        // demo on Hamiltonian cycle
+        scouting.findPath();
     }
 
 }
