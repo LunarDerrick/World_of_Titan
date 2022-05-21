@@ -1,4 +1,5 @@
 package world_of_titan;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -113,4 +114,5 @@ public class Scouting {
             }
         }
     }
+
 }
