@@ -5,9 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Allies<E> {
-    
+
     private String name;
-    private Integer height,weight,strength,agility,intelligence,coordination,leadership;
+    private Integer height, weight, strength, agility, intelligence, coordination, leadership;
 
     public Allies(String name, Integer height, Integer weight, Integer strength, Integer agility, Integer intelligence, Integer coordination, Integer leadership) {
         this.name = name;
@@ -22,46 +22,46 @@ public class Allies<E> {
 
     @Override
     public String toString() {
-        return "Name: " + name 
-                + "\nHeight: " + height + "cm" 
+        return "Name: " + name
+                + "\nHeight: " + height + "cm"
                 + "\nWeight: " + weight + "kg"
-                + "\nStrength: " + strength 
-                + "\nAgility: " + agility 
-                + "\nIntelligence:" + intelligence 
-                + "\nCoordination: " + coordination 
-                + "\nLeadership:" + leadership +"\n";
+                + "\nStrength: " + strength
+                + "\nAgility: " + agility
+                + "\nIntelligence: " + intelligence
+                + "\nCoordination: " + coordination
+                + "\nLeadership: " + leadership + "\n";
     }
-    
+
     public static void main(String[] args) {
-        // TODO code application logic here
-        java.util.LinkedList<Allies> list=new java.util.LinkedList<>();
-        
+
+        java.util.LinkedList<Allies> list = new java.util.LinkedList<>();
+
         try {
             Scanner in = new Scanner(new FileInputStream("Allies.txt"));
-            while(in.hasNextLine()){
-                System.out.println("Enter name: ");
+            while (in.hasNextLine()) {
+                System.out.print("Enter name: ");
                 String name = in.nextLine();
                 System.out.println(name);
-                if (name.isBlank()){
+                if (name.isBlank()) {
                     break;
                 }
-                System.out.println("Enter characteristics: ");
+                System.out.print("Enter characteristics: ");
                 String c1 = in.nextLine();
                 System.out.println(c1);
                 System.out.println();
-                String[]c2 = c1.split(" ");
-                Integer[]c3 = new Integer[7];
-                for(int i=0;i<c2.length;i++){
-                    c3[i]=Integer.parseInt(c2[i]);
+                String[] c2 = c1.split(" ");
+                Integer[] c3 = new Integer[7];
+                for (int i = 0; i < c2.length; i++) {
+                    c3[i] = Integer.parseInt(c2[i]);
                 }
-                Allies allie=new Allies(name,c3[0],c3[1],c3[2],c3[3],c3[4],c3[5],c3[6]);
+                Allies allie = new Allies(name, c3[0], c3[1], c3[2], c3[3], c3[4], c3[5], c3[6]);
                 list.add(allie);
                 System.out.println(allie.toString());
             }
             in.close();
         } catch (FileNotFoundException e) {
-            System.out.println("File was not found"); 
+            System.out.println("File was not found");
         }
-        
+
     }
 }
