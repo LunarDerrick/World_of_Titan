@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.event.*; // ActionEvent, EventHandler
+import static java.lang.Math.abs;
+import java.util.PriorityQueue;
 
 public class Tester extends Application {
 
@@ -21,7 +23,7 @@ public class Tester extends Application {
         FriendList friendList = new FriendList();
         Scouting scouting = new Scouting();
         SoldierArrange soldierArrange = new SoldierArrange();
-        Titan titan = new Titan();
+     
         
         // Load data from data.txt
         try {
@@ -52,7 +54,60 @@ public class Tester extends Application {
         scouting.findPath();        
 
         // attempt GUI using javafx
-        launch(args);        
+        launch(args);      
+        
+        //tester for titan
+        boolean t;
+        int a = 0;
+    do{
+        try{
+        Scanner s = new Scanner(System.in);
+      
+        System.out.print("Number of Titans: ");
+        a = s.nextInt();
+        t = false;
+          }catch(java.util.InputMismatchException e){
+            System.out.println("Please key in an integer only......");
+           t = true; 
+        }
+    }while(t);{  
+        System.out.println("");
+        System.out.println("Generating "+a+" Titans ....\n");
+        PriorityQueue<Titan> pq = new PriorityQueue<>();
+        PriorityQueue<Titan> pqtmp = new PriorityQueue<>();
+        for(int i=1; i<=a; i++){
+            pqtmp.add(new Titan(i));
+        }
+        
+        while(!pqtmp.isEmpty()){
+            pq.add(pqtmp.poll());
+        }
+        
+        System.out.println("");
+        System.out.print("Sequence to be killed: ");
+        int initial = 0;
+        int distance = 0;
+        int sequence;
+        
+        int counter = 0;
+        for (Titan titan:pq){
+            sequence = titan.getIndex();
+            if(counter == pq.size()-1){
+                System.out.print("Titan " + sequence );
+            }
+            else{
+                System.out.print("Titan " + sequence + " --> ");
+            }
+            distance += abs(sequence - initial);
+            initial = sequence;
+            
+            counter ++;
+        }
+        
+        System.out.println("");
+        System.out.println("Total distance moved: " + distance);
+       
+      }
     }
 
     // attempt GUI using javafx
