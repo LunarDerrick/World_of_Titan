@@ -1,4 +1,5 @@
 package world_of_titan;
+
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,8 +24,7 @@ public class Tester extends Application {
         FriendList friendList = new FriendList();
         Scouting scouting = new Scouting();
         SoldierArrange soldierArrange = new SoldierArrange();
-     
-        
+
         // Load data from data.txt
         try {
             Scanner read = new Scanner(new FileInputStream("data.txt"));
@@ -32,16 +32,17 @@ public class Tester extends Application {
                 String input = read.nextLine();
                 String[] inputList = input.split(" ");
                 int[] numberList = new int[inputList.length];
-                
-                for (int i = 0; i < numberList.length; i++)
+
+                for (int i = 0; i < numberList.length; i++) {
                     numberList[i] = Integer.parseInt(inputList[i]);
-                
-                int[] values = new int[numberList.length-2];
-                System.arraycopy(numberList, 2, values, 0, numberList.length-2);
-                
+                }
+
+                int[] values = new int[numberList.length - 2];
+                System.arraycopy(numberList, 2, values, 0, numberList.length - 2);
+
                 scouting.mapNode(numberList[0], numberList[1], values);
             }
-            
+
             read.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
@@ -49,65 +50,69 @@ public class Tester extends Application {
 
         // display map data
         System.out.println(scouting.toString());
-        
+
         // demo on Hamiltonian cycle
-        scouting.findPath();        
+        scouting.findPath();
 
         // attempt GUI using javafx
-        launch(args);      
-        
+        launch(args);
+
         //tester for titan
         boolean t;
         int a = 0;
-    do{
-        try{
-        Scanner s = new Scanner(System.in);
-      
-        System.out.print("Number of Titans: ");
-        a = s.nextInt();
-        t = false;
-          }catch(java.util.InputMismatchException e){
-            System.out.println("Please key in an integer only......");
-           t = true; 
-        }
-    }while(t);{  
+        do {
+            try {
+                Scanner s = new Scanner(System.in);
+
+                System.out.print("Number of Titans: ");
+                a = s.nextInt();
+                t = false;
+
+                if (a < 0) {
+                    System.out.println("Positive integer only");
+                    t = true;
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Please key in an integer only......");
+                t = true;
+            }
+        } while (t);
+
         System.out.println("");
-        System.out.println("Generating "+a+" Titans ....\n");
+        System.out.println("Generating " + a + " Titans ....");
         PriorityQueue<Titan> pq = new PriorityQueue<>();
         PriorityQueue<Titan> pqtmp = new PriorityQueue<>();
-        for(int i=1; i<=a; i++){
+        for (int i = 1; i <= a; i++) {
             pqtmp.add(new Titan(i));
         }
-        
-        while(!pqtmp.isEmpty()){
+
+        while (!pqtmp.isEmpty()) {
             pq.add(pqtmp.poll());
         }
-        
+
         System.out.println("");
         System.out.print("Sequence to be killed: ");
         int initial = 0;
         int distance = 0;
         int sequence;
-        
+
         int counter = 0;
-        for (Titan titan:pq){
+        for (Titan titan : pq) {
             sequence = titan.getIndex();
-            if(counter == pq.size()-1){
-                System.out.print("Titan " + sequence );
-            }
-            else{
+            if (counter == pq.size() - 1) {
+                System.out.print("Titan " + sequence);
+            } else {
                 System.out.print("Titan " + sequence + " --> ");
             }
             distance += abs(sequence - initial);
             initial = sequence;
-            
-            counter ++;
+
+            counter++;
         }
-        
+
         System.out.println("");
         System.out.println("Total distance moved: " + distance);
-       
-      }
+
     }
 
     // attempt GUI using javafx
@@ -144,5 +149,5 @@ public class Tester extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    
+
 }
