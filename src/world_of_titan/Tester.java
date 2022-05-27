@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.event.*; // ActionEvent, EventHandler
+// Titan.java libraries
 import static java.lang.Math.abs;
 import java.util.PriorityQueue;
 
@@ -52,8 +53,11 @@ public class Tester extends Application {
         System.out.println(scouting.toString());
 
         // demo on Hamiltonian cycle
-        scouting.findPath();
-
+        scouting.scoutPath();
+                
+        // attempt on 2.4 best path to kill titan
+        scouting.findTitan();
+        
         // attempt GUI using javafx
         launch(args);
 

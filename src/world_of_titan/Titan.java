@@ -170,6 +170,7 @@ public class Titan implements Comparable<Titan> {
         }
     }
 
+    @Override
     public String toString() {
         String p = "";
         String c = "";
