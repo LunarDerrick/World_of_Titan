@@ -73,173 +73,259 @@ public class Tester extends Application {
             Leadership[i]=list.get(i).getLeadership();
         }
         
-        System.out.print("Sorting attribute: ");
-        String attr = s.nextLine();
-        switch(attr){
-            case "Strength":
-                for (int i=0;i<list.size();i++) {
-                    for (int j=0;j<list.size()-1;j++){ 
-                        if (Strength[j] > Strength[j+1]){
-                            int hold1 = Strength[j];        
-                            Strength[j] = Strength[j+1];  
-                            Strength[j+1] = hold1;
-                            int hold2 = Agility[j];        
-                            Agility[j] = Agility[j+1];  
-                            Agility[j+1] = hold2;
-                            int hold3 = Intelligence[j];        
-                            Intelligence[j] = Intelligence[j+1];  
-                            Intelligence[j+1] = hold3;
-                            int hold4 = Coordination[j];        
-                            Coordination[j] = Coordination[j+1];  
-                            Coordination[j+1] = hold4;
-                            int hold5 = Leadership[j];        
-                            Leadership[j] = Leadership[j+1];  
-                            Leadership[j+1] = hold5;
-                            String hold6 = Name[j];        
-                            Name[j] = Name[j+1];  
-                            Name[j+1] = hold6;
+        while(true){    
+            System.out.print("Sorting attribute: ");
+            String attr = s.nextLine();
+            if (attr.isBlank()){
+                break;
+            }
+            switch(attr){
+                case "Strength":
+                    for (int i=0;i<list.size();i++) {
+                        for (int j=0;j<list.size()-1;j++){ 
+                            if (Strength[j] > Strength[j+1]){
+                                int hold1 = Strength[j];        
+                                Strength[j] = Strength[j+1];  
+                                Strength[j+1] = hold1;
+                                int hold2 = Agility[j];        
+                                Agility[j] = Agility[j+1];  
+                                Agility[j+1] = hold2;
+                                int hold3 = Intelligence[j];        
+                                Intelligence[j] = Intelligence[j+1];  
+                                Intelligence[j+1] = hold3;
+                                int hold4 = Coordination[j];        
+                                Coordination[j] = Coordination[j+1];  
+                                Coordination[j+1] = hold4;
+                                int hold5 = Leadership[j];        
+                                Leadership[j] = Leadership[j+1];  
+                                Leadership[j+1] = hold5;
+                                String hold6 = Name[j];        
+                                Name[j] = Name[j+1];  
+                                Name[j+1] = hold6;
+                            }
                         }
                     }
-                }
-                    
-                for(int i=list.size()-1;i>=0;i--){
-                    System.out.println(Name[i]+" "+Strength[i]);
-                }
 
-                break;
-            
-            case "Agility":
-                for (int i=0;i<list.size();i++) {
-                    for (int j=0;j<list.size()-1;j++){ 
-                        if (Agility[j] > Agility[j+1]){
-                            int hold1 = Strength[j];        
-                            Strength[j] = Strength[j+1];  
-                            Strength[j+1] = hold1;
-                            int hold2 = Agility[j];        
-                            Agility[j] = Agility[j+1];  
-                            Agility[j+1] = hold2;
-                            int hold3 = Intelligence[j];        
-                            Intelligence[j] = Intelligence[j+1];  
-                            Intelligence[j+1] = hold3;
-                            int hold4 = Coordination[j];        
-                            Coordination[j] = Coordination[j+1];  
-                            Coordination[j+1] = hold4;
-                            int hold5 = Leadership[j];        
-                            Leadership[j] = Leadership[j+1];  
-                            Leadership[j+1] = hold5;
-                            String hold6 = Name[j];        
-                            Name[j] = Name[j+1];  
-                            Name[j+1] = hold6;
+                    for(int i=list.size()-1;i>=0;i--){
+                        System.out.println(Name[i]+" "+Strength[i]);
+                    }
+                    System.out.println();
+
+                    break;
+
+                case "Agility":
+                    for (int i=0;i<list.size();i++) {
+                        for (int j=0;j<list.size()-1;j++){ 
+                            if (Agility[j] > Agility[j+1]){
+                                int hold1 = Strength[j];        
+                                Strength[j] = Strength[j+1];  
+                                Strength[j+1] = hold1;
+                                int hold2 = Agility[j];        
+                                Agility[j] = Agility[j+1];  
+                                Agility[j+1] = hold2;
+                                int hold3 = Intelligence[j];        
+                                Intelligence[j] = Intelligence[j+1];  
+                                Intelligence[j+1] = hold3;
+                                int hold4 = Coordination[j];        
+                                Coordination[j] = Coordination[j+1];  
+                                Coordination[j+1] = hold4;
+                                int hold5 = Leadership[j];        
+                                Leadership[j] = Leadership[j+1];  
+                                Leadership[j+1] = hold5;
+                                String hold6 = Name[j];        
+                                Name[j] = Name[j+1];  
+                                Name[j+1] = hold6;
+                            }
                         }
                     }
-                }
-                    
-                for(int i=list.size()-1;i>=0;i--){
-                    System.out.println(Name[i]+" "+Agility[i]);
-                }
 
-                break;
-            
-            case "Intelligence":
-                for (int i=0;i<list.size();i++) {
-                    for (int j=0;j<list.size()-1;j++){ 
-                        if (Intelligence[j] > Intelligence[j+1]){
-                            int hold1 = Strength[j];        
-                            Strength[j] = Strength[j+1];  
-                            Strength[j+1] = hold1;
-                            int hold2 = Agility[j];        
-                            Agility[j] = Agility[j+1];  
-                            Agility[j+1] = hold2;
-                            int hold3 = Intelligence[j];        
-                            Intelligence[j] = Intelligence[j+1];  
-                            Intelligence[j+1] = hold3;
-                            int hold4 = Coordination[j];        
-                            Coordination[j] = Coordination[j+1];  
-                            Coordination[j+1] = hold4;
-                            int hold5 = Leadership[j];        
-                            Leadership[j] = Leadership[j+1];  
-                            Leadership[j+1] = hold5;
-                            String hold6 = Name[j];        
-                            Name[j] = Name[j+1];  
-                            Name[j+1] = hold6;
+                    for(int i=list.size()-1;i>=0;i--){
+                        System.out.println(Name[i]+" "+Agility[i]);
+                    }
+                    System.out.println("");
+                    
+                    break;
+
+                case "Intelligence":
+                    for (int i=0;i<list.size();i++) {
+                        for (int j=0;j<list.size()-1;j++){ 
+                            if (Intelligence[j] > Intelligence[j+1]){
+                                int hold1 = Strength[j];        
+                                Strength[j] = Strength[j+1];  
+                                Strength[j+1] = hold1;
+                                int hold2 = Agility[j];        
+                                Agility[j] = Agility[j+1];  
+                                Agility[j+1] = hold2;
+                                int hold3 = Intelligence[j];        
+                                Intelligence[j] = Intelligence[j+1];  
+                                Intelligence[j+1] = hold3;
+                                int hold4 = Coordination[j];        
+                                Coordination[j] = Coordination[j+1];  
+                                Coordination[j+1] = hold4;
+                                int hold5 = Leadership[j];        
+                                Leadership[j] = Leadership[j+1];  
+                                Leadership[j+1] = hold5;
+                                String hold6 = Name[j];        
+                                Name[j] = Name[j+1];  
+                                Name[j+1] = hold6;
+                            }
                         }
                     }
-                }
-                    
-                for(int i=list.size()-1;i>=0;i--){
-                    System.out.println(Name[i]+" "+Intelligence[i]);
-                }
 
-                break;
-                
-            case "Coordination":
-                for (int i=0;i<list.size();i++) {
-                    for (int j=0;j<list.size()-1;j++){ 
-                        if (Coordination[j] > Coordination[j+1]){
-                            int hold1 = Strength[j];        
-                            Strength[j] = Strength[j+1];  
-                            Strength[j+1] = hold1;
-                            int hold2 = Agility[j];        
-                            Agility[j] = Agility[j+1];  
-                            Agility[j+1] = hold2;
-                            int hold3 = Intelligence[j];        
-                            Intelligence[j] = Intelligence[j+1];  
-                            Intelligence[j+1] = hold3;
-                            int hold4 = Coordination[j];        
-                            Coordination[j] = Coordination[j+1];  
-                            Coordination[j+1] = hold4;
-                            int hold5 = Leadership[j];        
-                            Leadership[j] = Leadership[j+1];  
-                            Leadership[j+1] = hold5;
-                            String hold6 = Name[j];        
-                            Name[j] = Name[j+1];  
-                            Name[j+1] = hold6;
+                    for(int i=list.size()-1;i>=0;i--){
+                        System.out.println(Name[i]+" "+Intelligence[i]);
+                    }
+                    System.out.println();
+                    
+                    break;
+
+                case "Coordination":
+                    for (int i=0;i<list.size();i++) {
+                        for (int j=0;j<list.size()-1;j++){ 
+                            if (Coordination[j] > Coordination[j+1]){
+                                int hold1 = Strength[j];        
+                                Strength[j] = Strength[j+1];  
+                                Strength[j+1] = hold1;
+                                int hold2 = Agility[j];        
+                                Agility[j] = Agility[j+1];  
+                                Agility[j+1] = hold2;
+                                int hold3 = Intelligence[j];        
+                                Intelligence[j] = Intelligence[j+1];  
+                                Intelligence[j+1] = hold3;
+                                int hold4 = Coordination[j];        
+                                Coordination[j] = Coordination[j+1];  
+                                Coordination[j+1] = hold4;
+                                int hold5 = Leadership[j];        
+                                Leadership[j] = Leadership[j+1];  
+                                Leadership[j+1] = hold5;
+                                String hold6 = Name[j];        
+                                Name[j] = Name[j+1];  
+                                Name[j+1] = hold6;
+                            }
                         }
                     }
-                }
-                    
-                for(int i=list.size()-1;i>=0;i--){
-                    System.out.println(Name[i]+" "+Coordination[i]);
-                }
 
-                break;
-                
-            case "Leadership":
-                for (int i=0;i<list.size();i++) {
-                    for (int j=0;j<list.size()-1;j++){ 
-                        if (Leadership[j] > Leadership[j+1]){
-                            int hold1 = Strength[j];        
-                            Strength[j] = Strength[j+1];  
-                            Strength[j+1] = hold1;
-                            int hold2 = Agility[j];        
-                            Agility[j] = Agility[j+1];  
-                            Agility[j+1] = hold2;
-                            int hold3 = Intelligence[j];        
-                            Intelligence[j] = Intelligence[j+1];  
-                            Intelligence[j+1] = hold3;
-                            int hold4 = Coordination[j];        
-                            Coordination[j] = Coordination[j+1];  
-                            Coordination[j+1] = hold4;
-                            int hold5 = Leadership[j];        
-                            Leadership[j] = Leadership[j+1];  
-                            Leadership[j+1] = hold5;
-                            String hold6 = Name[j];        
-                            Name[j] = Name[j+1];  
-                            Name[j+1] = hold6;
+                    for(int i=list.size()-1;i>=0;i--){
+                        System.out.println(Name[i]+" "+Coordination[i]);
+                    }
+                    System.out.println();
+                    
+                    break;
+
+                case "Leadership":
+                    for (int i=0;i<list.size();i++) {
+                        for (int j=0;j<list.size()-1;j++){ 
+                            if (Leadership[j] > Leadership[j+1]){
+                                int hold1 = Strength[j];        
+                                Strength[j] = Strength[j+1];  
+                                Strength[j+1] = hold1;
+                                int hold2 = Agility[j];        
+                                Agility[j] = Agility[j+1];  
+                                Agility[j+1] = hold2;
+                                int hold3 = Intelligence[j];        
+                                Intelligence[j] = Intelligence[j+1];  
+                                Intelligence[j+1] = hold3;
+                                int hold4 = Coordination[j];        
+                                Coordination[j] = Coordination[j+1];  
+                                Coordination[j+1] = hold4;
+                                int hold5 = Leadership[j];        
+                                Leadership[j] = Leadership[j+1];  
+                                Leadership[j+1] = hold5;
+                                String hold6 = Name[j];        
+                                Name[j] = Name[j+1];  
+                                Name[j+1] = hold6;
+                            }
                         }
                     }
-                }
-                    
-                for(int i=list.size()-1;i>=0;i--){
-                    System.out.println(Name[i]+" "+Leadership[i]);
-                }
 
-                break;
-            
-            default:
-                System.out.println("Error");
-                
+                    for(int i=list.size()-1;i>=0;i--){
+                        System.out.println(Name[i]+" "+Leadership[i]);
+                    }
+                    System.out.println();
+                    
+                    break;
+
+                default:
+                    System.out.println("Error");
+
+            }
         }
+        
+        System.out.println();
+        
+        while(true){
+            System.out.print("Finding ability: ");
+            String ability = s.nextLine();
+            
+            if (ability.isBlank()){
+                break;
+            }
+            
+            System.out.print("value: ");
+            int value = s.nextInt();
+            String enter = s.nextLine();
+            switch(ability){
+                case "Strength":
+                    System.out.print("Soldier: ");
+                    for(int i=0;i<list.size();i++){
+                        if(value==Strength[i]){
+                            System.out.print(Name[i]+" ");
+                        }
+                    }
+                    System.out.println();
+                    
+                    break;
+
+                case "Agility":
+                    System.out.print("Soldier: ");
+                    for(int i=0;i<list.size();i++){
+                        if(value==Agility[i]){
+                            System.out.print(Name[i]+" ");                            
+                        }
+                    }
+                    System.out.println();
+                    
+                    break;
+                    
+                case "Intelligence":
+                    System.out.print("Soldier: ");
+                    for(int i=0;i<list.size();i++){
+                        if(value==Intelligence[i]){
+                            System.out.print(Name[i]+" ");                            
+                        }
+                    }
+                    System.out.println();
+                    
+                    break;
+                    
+                case "Coordination":
+                    System.out.print("Soldier: ");
+                    for(int i=0;i<list.size();i++){
+                        if(value==Coordination[i]){
+                            System.out.print(Name[i]+" ");                            
+                        }
+                    }
+                    System.out.println();
+                    
+                    break;
+                    
+                case "Leadership":
+                    System.out.print("Soldier: ");
+                    for(int i=0;i<list.size();i++){
+                        if(value==Leadership[i]){
+                            System.out.print(Name[i]+" ");
+                        }
+                    }
+                    System.out.println();
+                    
+                    break;
+                    
+                default:
+                    System.out.println("Error");
+            }
+            System.out.println();
+        }   
+    
         
     
    
