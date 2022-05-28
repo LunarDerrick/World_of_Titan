@@ -253,6 +253,7 @@ public class Tester extends Application {
         
         System.out.println();
         
+        //Finding ability
         while(true){
             System.out.print("Finding ability: ");
             String ability = s.nextLine();
