@@ -64,36 +64,4 @@ public class Allies<E> {
         }
 
     }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public Integer getHeight() {
-        return height;
-    }
-
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public Integer getStrength() {
-        return strength;
-    }
-
-    public Integer getAgility() {
-        return agility;
-    }
-
-    public Integer getIntelligence() {
-        return intelligence;
-    }
-
-    public Integer getCoordination() {
-        return coordination;
-    }
-
-    public Integer getLeadership() {
-        return leadership;
-    }    
 }
