@@ -1,6 +1,6 @@
 package world_of_titan;
 
-import java.util.Scanner;
+import java.util.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 // GUI library
@@ -16,7 +16,7 @@ import javafx.geometry.Pos;
 import javafx.event.*; // ActionEvent, EventHandler
 // Titan.java libraries
 import static java.lang.Math.abs;
-import java.util.PriorityQueue;
+
 
 public class Tester extends Application {
 
@@ -420,7 +420,64 @@ public class Tester extends Application {
         System.out.println("");
         System.out.println("Total distance moved: " + distance);
 
+        //Wall of maria
+        int b = 0;
+        do {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter number of layers: ");
+                b = scanner.nextInt();
+                if ((b >= -2147483647 && b <= 2147483646)) {
+                    t = false;
+                } else {
+                    t = true;
+                }
+            }catch (InputMismatchException e) {
+                System.out.println("Please enter an integer.");
+                t = true;
+            }
+        }while (t);
+
+        String input;
+        List<List<Integer>> walls = new ArrayList<>();
+        List<Integer> edges = new ArrayList<>();
+
+        int max = 0;
+        do {
+            edges.clear();
+            for(int i=1; i<=b; i++) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter brick edges of layer " + i + ": ");
+                input = scanner.nextLine();
+                if (!input.isBlank()) {
+                    String[] arr = input.split(" ");
+                    for (String string : arr) {
+                        int temp = Integer.parseInt(string);
+                        edges.add(temp);
+                        if (temp >= max) {
+                            max = temp;
+                        }
+                    }
+                } else {
+                    System.out.println("Please enter a number...");
+                    break;
+                }
+                if (max == 0) {
+                    System.out.println("Please enter any number larger than 0.");
+                    break;
+                }
+            }
+        }while (max == 0);
+
+        walls.add(edges);
+        List<Integer> index = walls.get(0);
+        WallOfMaria wom = new WallOfMaria();
+        System.out.println();
+        System.out.print("Weakest part of the wall is at position " + wom.getMost(index,max+1));
+
     }
+
+
 
     // attempt GUI using javafx
     @Override
