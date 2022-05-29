@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="World_of_Titan:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/World_of_Titan_jar</output-path>
+    <root id="root">
+      <element id="archive" name="World_of_Titan.jar">
+        <element id="module-output" name="World_of_Titan" />
+      </element>
+      <element id="library" level="project" name="javafx-swt" />
+    </root>
+  </artifact>
+</component>
