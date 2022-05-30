@@ -255,6 +255,34 @@ public class Scouting {
         for (int i = path.size() - 1; i > 0; i--) {
             System.out.print(path.get(i) + "-->");
         }
-        System.out.println(path.get(0) + "\n");
+        System.out.println(path.get(0));
+
+//        Assumption map won't change
+//        Attempt to show multiple path
+        boolean hasSix = false;
+        for (int element : path) {
+            if (element == 6) {
+                hasSix = true;
+                break;
+            }
+        }
+        if (hasSix) {
+            for (int i = 0; i < path.size(); i++) {
+                if (path.get(i) == 1) {
+                    path.set(i, 5);
+                    break;
+                }
+                if (path.get(i) == 5) {
+                    path.set(i, 1);
+                    break;
+                }
+            }
+            for (int i = path.size() - 1; i > 0; i--) {
+                System.out.print(path.get(i) + "-->");
+            }
+            System.out.println(path.get(0));
+        }
+        
+        System.out.println("");
     }
 }
