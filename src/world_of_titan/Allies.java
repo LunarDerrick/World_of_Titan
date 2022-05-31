@@ -31,7 +31,6 @@ public class Allies<E> {
                 + "\nCoordination: " + coordination
                 + "\nLeadership: " + leadership + "\n";
     }
-
     
     public String getName() {
         return name;
