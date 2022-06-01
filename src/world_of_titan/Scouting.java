@@ -1,10 +1,7 @@
 package world_of_titan;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Scanner;
-import java.util.InputMismatchException;
-import java.util.Arrays;
+import java.io.*; // FileInputStream, FileNotFoundException
+import java.util.*; // ArryaList, LinkedList, Scanner, InputMismatchException
 
 public class Scouting {
 
@@ -47,6 +44,40 @@ public class Scouting {
     // getter method for mapNode
     private LinkedList getMapNode(int index) {
         return map.get(index);
+    }
+
+    /**
+     * loadMap(String filename): reads a .txt file to initialize a map for
+     * various uses.
+     *
+     * this function should be invoked as early as possible, as a lot of
+     * functions rely on map data.
+     *
+     * @param filename: name of the .txt file, case sensitive
+     */
+    public void loadMap(String filename) {
+        try {
+            Scanner read = new Scanner(new FileInputStream(filename));
+            while (read.hasNextLine()) {
+                String input = read.nextLine();
+                String[] inputList = input.split(" ");
+                int[] numberList = new int[inputList.length];
+
+                for (int i = 0; i < numberList.length; i++) {
+                    numberList[i] = Integer.parseInt(inputList[i]);
+                }
+
+                int[] values = new int[numberList.length - 2];
+                System.arraycopy(numberList, 2, values, 0, numberList.length - 2);
+
+                mapNode(numberList[0], numberList[1], values);
+            }
+
+            read.close();
+            System.out.println("\nMap fully loaded.\n");
+        } catch (FileNotFoundException e) {
+            System.out.println("\nFile not found");
+        }
     }
 
     /**
@@ -282,7 +313,7 @@ public class Scouting {
             }
             System.out.println(path.get(0));
         }
-        
+
         System.out.println("");
     }
 }

@@ -1,9 +1,6 @@
 package world_of_titan;
-// revert 1 stage
-import java.util.*;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-// GUI library
+
+// GUI libraries
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.stage.Stage;
@@ -11,481 +8,45 @@ import javafx.scene.text.Text;
 import javafx.scene.control.*; // Button, TextField
 import javafx.scene.layout.GridPane;
 import javafx.scene.Scene;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.geometry.*; // Insets, Pos
 import javafx.event.*; // ActionEvent, EventHandler
-// Titan.java libraries
-import static java.lang.Math.abs;
-
 
 public class Tester extends Application {
 
     public static void main(String[] args) {
         // Test codes in this main class
-        //FriendList friendList = new FriendList();
-        Scouting scouting = new Scouting();
-        SoldierArrange soldierArrange = new SoldierArrange();
+        FriendList friendList = new FriendList();
+        Evaluation evaluation = new Evaluation();
 
-        //Allies
-        java.util.LinkedList<Allies> list=new java.util.LinkedList<>();
-        Scanner s = new Scanner(System.in);
-        try {
-            Scanner in = new Scanner(new FileInputStream("Allies.txt"));
-            while(in.hasNextLine()){
-                System.out.println("Enter name: ");
-                String name = in.nextLine();
-                System.out.println(name);
-                if (name.isBlank()){
-                    break;
-                }
-                System.out.println("Enter characteristics: ");
-                String c1 = in.nextLine();
-                System.out.println(c1);
-                System.out.println();
-                String[]c2 = c1.split(" ");
-                Integer[]c3 = new Integer[7];
-                for(int i=0;i<c2.length;i++){
-                    c3[i]=Integer.parseInt(c2[i]);
-                }
-                Allies allie=new Allies(name,c3[0],c3[1],c3[2],c3[3],c3[4],c3[5],c3[6]);
-                list.add(allie);
-                System.out.println(allie.toString());
-            }
-            in.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("File was not found"); 
-        }
-        
+        //Allies (Now under FriendList.java)
+        friendList.loadAllies("Allies.txt");
+
         //Sorting attribute
-        String[]Name=new String[list.size()];
-        int[]Strength=new int[list.size()];
-        int[]Agility=new int[list.size()];
-        int[]Intelligence=new int[list.size()];
-        int[]Coordination=new int[list.size()];
-        int[]Leadership=new int[list.size()];
-        
-        for(int i=0;i<list.size();i++){
-            Name[i]=list.get(i).getName();
-            Strength[i]=list.get(i).getStrength();
-            Agility[i]=list.get(i).getAgility();
-            Intelligence[i]=list.get(i).getIntelligence();
-            Coordination[i]=list.get(i).getCoordination();
-            Leadership[i]=list.get(i).getLeadership();
-        }
-        
-        while(true){    
-            System.out.print("Sorting attribute: ");
-            String attr = s.nextLine();
-            if (attr.isBlank()){
-                break;
-            }
-            switch(attr){
-                case "Strength":
-                    for (int i=0;i<list.size();i++) {
-                        for (int j=0;j<list.size()-1;j++){ 
-                            if (Strength[j] > Strength[j+1]){
-                                int hold1 = Strength[j];        
-                                Strength[j] = Strength[j+1];  
-                                Strength[j+1] = hold1;
-                                int hold2 = Agility[j];        
-                                Agility[j] = Agility[j+1];  
-                                Agility[j+1] = hold2;
-                                int hold3 = Intelligence[j];        
-                                Intelligence[j] = Intelligence[j+1];  
-                                Intelligence[j+1] = hold3;
-                                int hold4 = Coordination[j];        
-                                Coordination[j] = Coordination[j+1];  
-                                Coordination[j+1] = hold4;
-                                int hold5 = Leadership[j];        
-                                Leadership[j] = Leadership[j+1];  
-                                Leadership[j+1] = hold5;
-                                String hold6 = Name[j];        
-                                Name[j] = Name[j+1];  
-                                Name[j+1] = hold6;
-                            }
-                        }
-                    }
+        friendList.sortAttribute();
+        System.out.println("");
 
-                    for(int i=list.size()-1;i>=0;i--){
-                        System.out.println(Name[i]+" "+Strength[i]);
-                    }
-                    System.out.println();
-
-                    break;
-
-                case "Agility":
-                    for (int i=0;i<list.size();i++) {
-                        for (int j=0;j<list.size()-1;j++){ 
-                            if (Agility[j] > Agility[j+1]){
-                                int hold1 = Strength[j];        
-                                Strength[j] = Strength[j+1];  
-                                Strength[j+1] = hold1;
-                                int hold2 = Agility[j];        
-                                Agility[j] = Agility[j+1];  
-                                Agility[j+1] = hold2;
-                                int hold3 = Intelligence[j];        
-                                Intelligence[j] = Intelligence[j+1];  
-                                Intelligence[j+1] = hold3;
-                                int hold4 = Coordination[j];        
-                                Coordination[j] = Coordination[j+1];  
-                                Coordination[j+1] = hold4;
-                                int hold5 = Leadership[j];        
-                                Leadership[j] = Leadership[j+1];  
-                                Leadership[j+1] = hold5;
-                                String hold6 = Name[j];        
-                                Name[j] = Name[j+1];  
-                                Name[j+1] = hold6;
-                            }
-                        }
-                    }
-
-                    for(int i=list.size()-1;i>=0;i--){
-                        System.out.println(Name[i]+" "+Agility[i]);
-                    }
-                    System.out.println("");
-                    
-                    break;
-
-                case "Intelligence":
-                    for (int i=0;i<list.size();i++) {
-                        for (int j=0;j<list.size()-1;j++){ 
-                            if (Intelligence[j] > Intelligence[j+1]){
-                                int hold1 = Strength[j];        
-                                Strength[j] = Strength[j+1];  
-                                Strength[j+1] = hold1;
-                                int hold2 = Agility[j];        
-                                Agility[j] = Agility[j+1];  
-                                Agility[j+1] = hold2;
-                                int hold3 = Intelligence[j];        
-                                Intelligence[j] = Intelligence[j+1];  
-                                Intelligence[j+1] = hold3;
-                                int hold4 = Coordination[j];        
-                                Coordination[j] = Coordination[j+1];  
-                                Coordination[j+1] = hold4;
-                                int hold5 = Leadership[j];        
-                                Leadership[j] = Leadership[j+1];  
-                                Leadership[j+1] = hold5;
-                                String hold6 = Name[j];        
-                                Name[j] = Name[j+1];  
-                                Name[j+1] = hold6;
-                            }
-                        }
-                    }
-
-                    for(int i=list.size()-1;i>=0;i--){
-                        System.out.println(Name[i]+" "+Intelligence[i]);
-                    }
-                    System.out.println();
-                    
-                    break;
-
-                case "Coordination":
-                    for (int i=0;i<list.size();i++) {
-                        for (int j=0;j<list.size()-1;j++){ 
-                            if (Coordination[j] > Coordination[j+1]){
-                                int hold1 = Strength[j];        
-                                Strength[j] = Strength[j+1];  
-                                Strength[j+1] = hold1;
-                                int hold2 = Agility[j];        
-                                Agility[j] = Agility[j+1];  
-                                Agility[j+1] = hold2;
-                                int hold3 = Intelligence[j];        
-                                Intelligence[j] = Intelligence[j+1];  
-                                Intelligence[j+1] = hold3;
-                                int hold4 = Coordination[j];        
-                                Coordination[j] = Coordination[j+1];  
-                                Coordination[j+1] = hold4;
-                                int hold5 = Leadership[j];        
-                                Leadership[j] = Leadership[j+1];  
-                                Leadership[j+1] = hold5;
-                                String hold6 = Name[j];        
-                                Name[j] = Name[j+1];  
-                                Name[j+1] = hold6;
-                            }
-                        }
-                    }
-
-                    for(int i=list.size()-1;i>=0;i--){
-                        System.out.println(Name[i]+" "+Coordination[i]);
-                    }
-                    System.out.println();
-                    
-                    break;
-
-                case "Leadership":
-                    for (int i=0;i<list.size();i++) {
-                        for (int j=0;j<list.size()-1;j++){ 
-                            if (Leadership[j] > Leadership[j+1]){
-                                int hold1 = Strength[j];        
-                                Strength[j] = Strength[j+1];  
-                                Strength[j+1] = hold1;
-                                int hold2 = Agility[j];        
-                                Agility[j] = Agility[j+1];  
-                                Agility[j+1] = hold2;
-                                int hold3 = Intelligence[j];        
-                                Intelligence[j] = Intelligence[j+1];  
-                                Intelligence[j+1] = hold3;
-                                int hold4 = Coordination[j];        
-                                Coordination[j] = Coordination[j+1];  
-                                Coordination[j+1] = hold4;
-                                int hold5 = Leadership[j];        
-                                Leadership[j] = Leadership[j+1];  
-                                Leadership[j+1] = hold5;
-                                String hold6 = Name[j];        
-                                Name[j] = Name[j+1];  
-                                Name[j+1] = hold6;
-                            }
-                        }
-                    }
-
-                    for(int i=list.size()-1;i>=0;i--){
-                        System.out.println(Name[i]+" "+Leadership[i]);
-                    }
-                    System.out.println();
-                    
-                    break;
-
-                default:
-                    System.out.println("Error");
-
-            }
-        }
-        
-        System.out.println();
-        
         //Finding ability
-        while(true){
-            System.out.print("Finding ability: ");
-            String ability = s.nextLine();
-            
-            if (ability.isBlank()){
-                break;
-            }
-            
-            System.out.print("value: ");
-            int value = s.nextInt();
-            String enter = s.nextLine();
-            switch(ability){
-                case "Strength":
-                    System.out.print("Soldier: ");
-                    for(int i=0;i<list.size();i++){
-                        if(value==Strength[i]){
-                            System.out.print(Name[i]+" ");
-                        }
-                    }
-                    System.out.println();
-                    
-                    break;
+        friendList.findAbility();
+        System.out.println("");
 
-                case "Agility":
-                    System.out.print("Soldier: ");
-                    for(int i=0;i<list.size();i++){
-                        if(value==Agility[i]){
-                            System.out.print(Name[i]+" ");                            
-                        }
-                    }
-                    System.out.println();
-                    
-                    break;
-                    
-                case "Intelligence":
-                    System.out.print("Soldier: ");
-                    for(int i=0;i<list.size();i++){
-                        if(value==Intelligence[i]){
-                            System.out.print(Name[i]+" ");                            
-                        }
-                    }
-                    System.out.println();
-                    
-                    break;
-                    
-                case "Coordination":
-                    System.out.print("Soldier: ");
-                    for(int i=0;i<list.size();i++){
-                        if(value==Coordination[i]){
-                            System.out.print(Name[i]+" ");                            
-                        }
-                    }
-                    System.out.println();
-                    
-                    break;
-                    
-                case "Leadership":
-                    System.out.print("Soldier: ");
-                    for(int i=0;i<list.size();i++){
-                        if(value==Leadership[i]){
-                            System.out.print(Name[i]+" ");
-                        }
-                    }
-                    System.out.println();
-                    
-                    break;
-                    
-                default:
-                    System.out.println("Error");
-            }
-            System.out.println();
-        }   
-    
-        
-    
-   
-        // Load data from data.txt
-        try {
-            Scanner read = new Scanner(new FileInputStream("data.txt"));
-            while (read.hasNextLine()) {
-                String input = read.nextLine();
-                String[] inputList = input.split(" ");
-                int[] numberList = new int[inputList.length];
+        //tester for titan (Now under Evaluation.java)
+        evaluation.findKillPriority();
 
-                for (int i = 0; i < numberList.length; i++) {
-                    numberList[i] = Integer.parseInt(inputList[i]);
-                }
-
-                int[] values = new int[numberList.length - 2];
-                System.arraycopy(numberList, 2, values, 0, numberList.length - 2);
-
-                scouting.mapNode(numberList[0], numberList[1], values);
-            }
-
-            read.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        }
-
-        // display map data
-        System.out.println(scouting.toString());
-
-        // demo on Hamiltonian cycle
-        scouting.scoutPath();
-                
-        // attempt on 2.4 best path to kill titan
-        scouting.findTitan();
-        
         // attempt GUI using javafx
         launch(args);
-
-        //tester for titan
-        boolean t;
-        int a = 0;
-        do {
-            try {
-
-                System.out.print("Number of Titans: ");
-                a = s.nextInt();
-                t = false;
-
-                if (a < 0) {
-                    System.out.println("Positive integer only");
-                    t = true;
-                }
-            } catch (java.util.InputMismatchException e) {
-                System.out.println("Please key in an integer only......");
-                t = true;
-            }
-        } while (t);
-
         System.out.println("");
-        System.out.println("Generating " + a + " Titans ....");
-        PriorityQueue<Titan> pq = new PriorityQueue<>();
-        PriorityQueue<Titan> pqtmp = new PriorityQueue<>();
-        for (int i = 1; i <= a; i++) {
-            pqtmp.add(new Titan(i));
-        }
 
-        while (!pqtmp.isEmpty()) {
-            pq.add(pqtmp.poll());
-        }
-
-        System.out.println("");
-        System.out.print("Sequence to be killed: ");
-        int initial = 0;
-        int distance = 0;
-        int sequence;
-
-        int counter = 0;
-        for (Titan titan : pq) {
-            sequence = titan.getIndex();
-            if (counter == pq.size() - 1) {
-                System.out.print("Titan " + sequence);
-            } else {
-                System.out.print("Titan " + sequence + " --> ");
-            }
-            distance += abs(sequence - initial);
-            initial = sequence;
-
-            counter++;
-        }
-
-        System.out.println("");
-        System.out.println("Total distance moved: " + distance);
-
-        //Wall of maria
-        int b = 0;
-        do {
-            try {
-                Scanner scanner = new Scanner(System.in);
-                System.out.print("Enter number of layers: ");
-                b = scanner.nextInt();
-                if ((b >= -2147483647 && b <= 2147483646)) {
-                    t = false;
-                } else {
-                    t = true;
-                }
-            }catch (InputMismatchException e) {
-                System.out.println("Please enter an integer.");
-                t = true;
-            }
-        }while (t);
-
-        String input;
-        List<List<Integer>> walls = new ArrayList<>();
-        List<Integer> edges = new ArrayList<>();
-
-        int max = 0;
-        do {
-            edges.clear();
-            for(int i=1; i<=b; i++) {
-                Scanner scanner = new Scanner(System.in);
-                System.out.print("Enter brick edges of layer " + i + ": ");
-                input = scanner.nextLine();
-                if (!input.isBlank()) {
-                    String[] arr = input.split(" ");
-                    for (String string : arr) {
-                        int temp = Integer.parseInt(string);
-                        edges.add(temp);
-                        if (temp >= max) {
-                            max = temp;
-                        }
-                    }
-                } else {
-                    System.out.println("Please enter a number...");
-                    break;
-                }
-                if (max == 0) {
-                    System.out.println("Please enter any number larger than 0.");
-                    break;
-                }
-            }
-        }while (max == 0);
-
-        walls.add(edges);
-        List<Integer> index = walls.get(0);
-        WallOfMaria wom = new WallOfMaria();
-        System.out.println();
-        System.out.print("Weakest part of the wall is at position " + wom.getMost(index,max+1));
-
+        //Wall of maria (Now under Evaluation.java)
+        evaluation.findWeakWall();
     }
-
-
 
     // attempt GUI using javafx
     @Override
     public void start(Stage stage) {
         // label, titles etc
-        Text text1 = new Text("Enter starting point: (Placeholder)");
+        Text text1 = new Text("Scouting.java demo");
         TextField textField1 = new TextField();
-        Button button1 = new Button("Search (Placeholder)");
+        Button button1 = new Button("Begin");
         // arrangment, layout etc
         GridPane gridPane = new GridPane();
         gridPane.setMinSize(400, 200);
@@ -503,8 +64,21 @@ public class Tester extends Application {
         button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                Scouting scouting = new Scouting();
+
+                // load map data
+                scouting.loadMap("mapData.txt");
+
+                // display map data
+                System.out.println(scouting.toString());
+
                 // demo on Hamiltonian cycle
-                System.out.println("for now it only output back at console");
+                scouting.scoutPath();
+
+                // attempt on 2.4 best path to kill titan
+                scouting.findTitan();
+
+                System.out.println("Please close the pop-out window for the code to resume");
             }
         });
         // create object to be invoked
@@ -513,7 +87,4 @@ public class Tester extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    
-    
-
 }
