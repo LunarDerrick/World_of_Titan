@@ -11,6 +11,7 @@ public class Scouting {
     private int start, numOfVertices;
     private boolean hasCycle = false;
     private ArrayList<Integer> cycle = new ArrayList();
+    private String error;
 
     /**
      * mapNode(): constructs a new mapNode to be added to map. A complete
@@ -72,9 +73,10 @@ public class Scouting {
 
                 mapNode(numberList[0], numberList[1], values);
             }
+            numOfVertices = map.size();
 
             read.close();
-            System.out.println("\nMap fully loaded.\n");
+            System.out.println("\nMap fully loaded.");
         } catch (FileNotFoundException e) {
             System.out.println("\nFile not found");
         }
@@ -121,9 +123,8 @@ public class Scouting {
      *
      * @param input: starting point to find a Hamiltonian cycle.
      */
-    private void findCycle(int input) {
+    public void findCycle(int input) {
         start = input;
-        numOfVertices = map.size();
         cycle.add(start);
         boolean[] visited = new boolean[numOfVertices];
         visited[start] = true;
@@ -132,6 +133,8 @@ public class Scouting {
         if (!hasCycle) {
             System.out.println("\nNo path found.\n");
         }
+
+        cycle.clear(); // in case reuse
     }
 
     /**
@@ -218,7 +221,7 @@ public class Scouting {
      *
      * @param input : value provided from findTitan(), set as destination.
      */
-    private void BFS(int input) {
+    public void BFS(int input) {
         boolean[] visited = new boolean[numOfVertices];
         int[] prevVertex = new int[numOfVertices];
         // int[] distance is used to verify whether it is the shortest path, as it may found a longer path earlier.
@@ -288,8 +291,8 @@ public class Scouting {
         }
         System.out.println(path.get(0));
 
-//        Assumption map won't change
-//        Attempt to show multiple path
+        // Assumption map won't change
+        // Attempt to show multiple path
         boolean hasSix = false;
         for (int element : path) {
             if (element == 6) {
@@ -315,5 +318,50 @@ public class Scouting {
         }
 
         System.out.println("");
+    }
+
+    /**
+     * isNumeric(String text): checks whether the given string can be converted
+     * to an integer.
+     *
+     * @param text: string to be checked
+     */
+    public boolean isNumeric(String text) {
+        try {
+            Integer.parseInt(text);
+        } catch (NumberFormatException e) {
+            error = "Positive integer only";
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * withinRange(String text): checks whether the given value is within the
+     * map's range.
+     *
+     * This function assumes the string is guaranteed to be able to convert into
+     * an integer.
+     *
+     * @param text: string to be checked
+     */
+    public boolean withinRange(String text) {
+        int value = Integer.parseInt(text);
+        try {
+            if (value < 0 || value >= map.size()) {
+                throw new Exception("Exceed range\nCurrently available: 0~" + (map.size() - 1));
+            }
+            return true;
+        } catch (Exception e) {
+            error = e.getMessage();
+            return false;
+        }
+    }
+
+    /**
+     * getErrorMessage(): getter method for Scouting 'error' field.
+     */
+    public String getErrorMessage() {
+        return error;
     }
 }

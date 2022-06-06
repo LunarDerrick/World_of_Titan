@@ -46,8 +46,13 @@ public class Tester extends Application {
         // label, titles etc
         Text text1 = new Text("Scouting.java demo");
         TextField textField1 = new TextField();
-        Button button1 = new Button("Begin");
+        textField1.setPromptText("type here...");
+        Button button1 = new Button("Show map data");
+        Button button2 = new Button("scoutPath");
+        Button button3 = new Button("findTitan");
+        Button button4 = new Button("Clear");
         // arrangment, layout etc
+        textField1.setMaxWidth(100);
         GridPane gridPane = new GridPane();
         gridPane.setMinSize(400, 200);
         gridPane.setPadding(new Insets(10, 10, 10, 10));
@@ -55,30 +60,72 @@ public class Tester extends Application {
         gridPane.setHgap(5);
         gridPane.setAlignment(Pos.CENTER);
         gridPane.add(text1, 0, 0);
-        gridPane.add(textField1, 1, 0);
-        gridPane.add(button1, 0, 2);
+        gridPane.add(textField1, 0, 2);
+        gridPane.add(button1, 0, 4);
+        gridPane.add(button2, 2, 4);
+        gridPane.add(button3, 4, 4);
+        gridPane.add(button4, 6, 4);
         // design, styling etc
         button1.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button2.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button3.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+        button4.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
         gridPane.setStyle("-fx-background-color: BEIGE;");
+        // declare Scouting
+        Scouting scouting = new Scouting();
+        // load map data
+        scouting.loadMap("mapData.txt");
         // event handler(accept input and process output)
+        // button1 = show map data
         button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Scouting scouting = new Scouting();
-
-                // load map data
-                scouting.loadMap("mapData.txt");
-
                 // display map data
-                System.out.println(scouting.toString());
-
-                // demo on Hamiltonian cycle
-                scouting.scoutPath();
-
-                // attempt on 2.4 best path to kill titan
-                scouting.findTitan();
+                System.out.println(scouting.toString() + "\n");;
 
                 System.out.println("Please close the pop-out window for the code to resume");
+            }
+        });
+        // button2 = scoutPath
+        button2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // demo on Hamiltonian cycle
+                // scouting.scoutPath();
+                String text = textField1.getText();
+                if (scouting.isNumeric(text) && scouting.withinRange(text)) {
+                    int value = Integer.parseInt(text);
+                    scouting.findCycle(value);
+                } else {
+                    System.out.println("\n" + scouting.getErrorMessage());
+                }
+
+                System.out.println("\nPlease close the pop-out window for the code to resume");
+            }
+        });
+        // button3 = findTitan
+        button3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // attempt on 2.4 best path to kill titan
+                // scouting.findTitan();
+                String text = textField1.getText();
+                if (scouting.isNumeric(text) && scouting.withinRange(text)) {
+                    int value = Integer.parseInt(text);
+                    System.out.println("");
+                    scouting.BFS(value);
+                } else {
+                    System.out.println("\n" + scouting.getErrorMessage() + "\n");
+                }                
+
+                System.out.println("Please close the pop-out window for the code to resume");
+            }
+        });
+        // button4 = clear(textField)
+        button4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                textField1.clear();
             }
         });
         // create object to be invoked
