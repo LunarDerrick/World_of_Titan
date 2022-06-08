@@ -475,7 +475,56 @@ public class Tester extends Application {
         System.out.println();
         System.out.print("Weakest part of the wall is at position " + wom.getMost(index,max+1));
 
+        //Marley code
+             MyHashMap<Character , String> Marley = new MyHashMap<Character , String>();
+        Marley.put('a', "j");
+        Marley.put('b', "c");
+        Marley.put('c', "t");
+        Marley.put('d', "a");
+        Marley.put('e', "k");
+        Marley.put('f', "z");
+        Marley.put('g', "s");
+        Marley.put('h', "i");
+        Marley.put('i', "w");
+        Marley.put('j', "x");
+        Marley.put('k', "o");
+        Marley.put('l', "n");
+        Marley.put('m', "g");
+        Marley.put('n', "b");
+        Marley.put('o', "f");
+        Marley.put('p', "h");
+        Marley.put('q', "l");
+        Marley.put('r', "d");
+        Marley.put('s', "e");
+        Marley.put('t', "y");
+        Marley.put('u', "m");
+        Marley.put('v', "v");
+        Marley.put('w', "u");
+        Marley.put('x', "p");
+        Marley.put('y', "q");
+        Marley.put('z', "r");
+        Marley.put('$', " ");
+        Marley.put(',', ", ");
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter Marley Sentence: ");
+        String marley = sc.nextLine();
+        
+        System.out.println("");
+        
+        String[] marleychar = marley.split("");
+       
+        for(int i = 0;i<marleychar.length;i++){
+
+          
+    
+        }
+        
     }
+    
+    
+    
 
 
 
