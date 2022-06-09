@@ -1,6 +1,8 @@
 package world_of_titan;
 
 // GUI libraries
+import java.util.ArrayList;
+import java.util.Scanner;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.stage.Stage;
@@ -38,6 +40,53 @@ public class Tester extends Application {
 
         //Wall of maria (Now under Evaluation.java)
         evaluation.findWeakWall();
+        
+        //Marley Code
+
+        MyHashMap<Character , String> Marley = new MyHashMap<Character , String>();
+        Marley.put('a', "j");
+        Marley.put('b', "c");
+        Marley.put('c', "t");
+        Marley.put('d', "a");
+        Marley.put('e', "k");
+        Marley.put('f', "z");
+        Marley.put('g', "s");
+        Marley.put('h', "i");
+        Marley.put('i', "w");
+        Marley.put('j', "x");
+        Marley.put('k', "o");
+        Marley.put('l', "n");
+        Marley.put('m', "g");
+        Marley.put('n', "b");
+        Marley.put('o', "f");
+        Marley.put('p', "h");
+        Marley.put('q', "l");
+        Marley.put('r', "d");
+        Marley.put('s', "e");
+        Marley.put('t', "y");
+        Marley.put('u', "m");
+        Marley.put('v', "v");
+        Marley.put('w', "u");
+        Marley.put('x', "p");
+        Marley.put('y', "q");
+        Marley.put('z', "r");
+        Marley.put('$', " ");
+        Marley.put(',', ", ");
+        
+        Scanner a = new Scanner(System.in);
+        
+        System.out.print("Enter Marley Sentence: ");
+        String marley = a.nextLine();
+        
+        System.out.println("");
+        
+        String[] marleychar = marley.split("");
+
+        for(int i = 0;i<marleychar.length;i++){
+            
+        }
+        }
+        
     }
 
     // attempt GUI using javafx
