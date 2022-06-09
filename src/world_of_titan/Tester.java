@@ -40,10 +40,9 @@ public class Tester extends Application {
 
         //Wall of maria (Now under Evaluation.java)
         evaluation.findWeakWall();
-        
-        //Marley Code
 
-        MyHashMap<Character , String> Marley = new MyHashMap<Character , String>();
+        //Marley Code
+        MyHashMap<Character, String> Marley = new MyHashMap<Character, String>();
         Marley.put('a', "j");
         Marley.put('b', "c");
         Marley.put('c', "t");
@@ -72,21 +71,19 @@ public class Tester extends Application {
         Marley.put('z', "r");
         Marley.put('$', " ");
         Marley.put(',', ", ");
-        
+
         Scanner a = new Scanner(System.in);
-        
+
         System.out.print("Enter Marley Sentence: ");
         String marley = a.nextLine();
-        
+
         System.out.println("");
-        
+
         String[] marleychar = marley.split("");
 
-        for(int i = 0;i<marleychar.length;i++){
-            
+        for (int i = 0; i < marleychar.length; i++) {
+
         }
-        }
-        
     }
 
     // attempt GUI using javafx
@@ -165,7 +162,7 @@ public class Tester extends Application {
                     scouting.BFS(value);
                 } else {
                     System.out.println("\n" + scouting.getErrorMessage() + "\n");
-                }                
+                }
 
                 System.out.println("Please close the pop-out window for the code to resume");
             }
