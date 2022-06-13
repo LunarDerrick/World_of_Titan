@@ -321,6 +321,150 @@ public class Scouting {
     }
 
     /**
+     * findMovingTitan(): an improvised version of findTitan().
+     *
+     * It accepts a series of numbers separated by commas(,) which is titan's
+     * move set, and find the shortest path to titan with the shortest time
+     * frame.
+     *
+     * Uses BFS2() and findShortestPath2() as helper functions.
+     */
+    public void findMovingTitan() {
+        String input;
+        boolean incorrectInput;
+        int[] inputList = {-1};
+
+        do {
+            incorrectInput = false;
+            // collect raw input
+            Scanner sc = new Scanner(System.in);
+            System.out.print("\nEnter location(s) of Titan: "); // input example: 1,3,5 (no space)
+            input = sc.nextLine();
+            String[] inputStr = input.split(",");
+            // convert input to integer array
+            inputList = new int[inputStr.length];
+            for (int i = 0; i < inputStr.length; i++) {
+                if (isNumeric(inputStr[i]) && withinRange(inputStr[i])) {
+                    inputList[i] = Integer.parseInt(inputStr[i]);
+                } else {
+                    System.out.println(getErrorMessage());
+                    incorrectInput = true;
+                }
+            }
+        } while (incorrectInput);
+
+        BFS2(inputList);
+    }
+
+    /**
+     * BFS2(): similar to BFS(), it finds the shortest path with
+     * a non-constant destination.
+     *
+     * Uses findShortestPath2() as helper function.
+     * 
+     * @param inputList: titan's move set, processed by findMovingTitan().
+     */
+    private void BFS2(int[] inputList) {
+        boolean[] visited = new boolean[numOfVertices];
+        int[] prevVertex = new int[numOfVertices];
+        Queue<Integer> queue = new Queue();
+        int vertex = 0;
+        // titan moves on time
+        int time = 0, move = 0;
+
+        for (int i = 0; i < numOfVertices; i++) {
+            prevVertex[i] = -1;
+        }
+
+        queue.enqueue(vertex);
+        visited[vertex] = true;
+
+        while (!queue.isEmpty()) {
+            vertex = queue.dequeue();
+
+            if (vertex == inputList[move]) {
+                break;
+            }
+
+            for (int i = 1; i < getMapNode(vertex).size(); i++) {
+
+                int neighbourVertex = (int) getMapNode(vertex).get(i);
+
+                if (!visited[neighbourVertex]) {
+                    visited[neighbourVertex] = true;
+                    prevVertex[neighbourVertex] = vertex;
+                    queue.enqueue(neighbourVertex);
+                }
+            }
+
+            // after navigate one node, time pass
+            time++;
+            // every 2 unit time, titan move to next node
+            if (time % 2 == 0) {
+                move++;
+                // if move pattern is completed, restart pattern
+                if (move >= inputList.length) {
+                    move = 0;
+                }
+            }
+        }
+
+        findShortestPath2(inputList[move], prevVertex, time);
+    }
+
+    /**
+     * findShortestPath2(): similar to findShortestPath(), only output extra time passed.
+     * 
+     * @param destination : value carried over from findTitan(), used to
+     * locate data required to be output.
+     * @param prevVertex : data processed by BFS(), used to trace the
+     * found path.
+     * @param time : value of time passed, provided by BFS2().
+     */
+    private void findShortestPath2(int destination, int[] prevVertex, int time) {
+        ArrayList<Integer> path = new ArrayList();
+        int current = destination;
+        path.add(current);
+
+        while (prevVertex[current] != -1) {
+            path.add(prevVertex[current]);
+            current = prevVertex[current];
+        }
+
+        System.out.println("Best path:");
+        for (int i = path.size() - 1; i > 0; i--) {
+            System.out.print(path.get(i) + "-->");
+        }
+        System.out.println(path.get(0));
+
+        boolean hasSix = false;
+        for (int element : path) {
+            if (element == 6) {
+                hasSix = true;
+                break;
+            }
+        }
+        if (hasSix) {
+            for (int i = 0; i < path.size(); i++) {
+                if (path.get(i) == 1) {
+                    path.set(i, 5);
+                    break;
+                }
+                if (path.get(i) == 5) {
+                    path.set(i, 1);
+                    break;
+                }
+            }
+            for (int i = path.size() - 1; i > 0; i--) {
+                System.out.print(path.get(i) + "-->");
+            }
+            System.out.println(path.get(0));
+        }
+
+        System.out.println("time passed: " + time + "\n");
+    }
+
+    /**
      * isNumeric(String text): checks whether the given string can be converted
      * to an integer.
      *

@@ -1,7 +1,6 @@
 package world_of_titan;
 
 // GUI libraries
-import java.util.ArrayList;
 import java.util.Scanner;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -33,10 +32,15 @@ public class Tester extends Application {
 
         //tester for titan (Now under Evaluation.java)
         evaluation.findKillPriority();
-
+        
         // attempt GUI using javafx
         launch(args);
         System.out.println("");
+        
+        // tester for Best path to kill Titan 1
+        Scouting scouting = new Scouting();
+        scouting.loadMap("mapData.txt");
+        scouting.findMovingTitan();        
 
         //Wall of maria (Now under Evaluation.java)
         evaluation.findWeakWall();
