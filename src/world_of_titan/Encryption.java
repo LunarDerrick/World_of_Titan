@@ -45,16 +45,22 @@ public class Encryption extends javax.swing.JFrame {
         jLabel3.setText("Cipher");
 
         encrypted.setEditable(false);
+        encrypted.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
         encrypted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 encryptedActionPerformed(evt);
             }
         });
 
+        message.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
         jLabel1.setText("Enter message to be encrypted/decrypted:");
 
+        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
         jLabel2.setText("Encrypted/Decryted message:");
 
+        Encrypt.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         Encrypt.setText("Encrypt");
         Encrypt.setToolTipText("");
         Encrypt.addActionListener(new java.awt.event.ActionListener() {
@@ -63,13 +69,15 @@ public class Encryption extends javax.swing.JFrame {
             }
         });
 
-        copy.setText("Copy");
+        copy.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        copy.setText("Insert to converter");
         copy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 copyActionPerformed(evt);
             }
         });
 
+        decrypt.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         decrypt.setText("Decrypt");
         decrypt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +111,7 @@ public class Encryption extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(212, 212, 212)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +131,7 @@ public class Encryption extends javax.swing.JFrame {
                     .addComponent(Encrypt)
                     .addComponent(copy)
                     .addComponent(decrypt))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,7 +206,13 @@ public class Encryption extends javax.swing.JFrame {
 
     private void copyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyActionPerformed
         // TODO add your handling code here:
-        encrypted.copy();
+        Marley m = new Marley();
+        if(Encryption.encrypted.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"No message to be inserted!","Error",JOptionPane.ERROR_MESSAGE);
+        }else{
+        Marley.marley.setText(Encryption.encrypted.getText());
+        m.setVisible(true);
+        }
     }//GEN-LAST:event_copyActionPerformed
 
     /**
@@ -241,10 +255,10 @@ public class Encryption extends javax.swing.JFrame {
     private javax.swing.JButton Encrypt;
     private javax.swing.JButton copy;
     private javax.swing.JButton decrypt;
-    private javax.swing.JTextField encrypted;
+    public static javax.swing.JTextField encrypted;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField message;
+    public static javax.swing.JTextField message;
     // End of variables declaration//GEN-END:variables
 }
