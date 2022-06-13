@@ -63,8 +63,8 @@ public class FriendList {
                 break;
             } else {
                 System.out.println();
-                switch (attr) {
-                    case "Strength":
+                
+                    if(attr.equalsIgnoreCase("strength")){
                         for (int i = 0; i < list.size(); i++) {
                             for (int j = 0; j < list.size() - 1; j++) {
                                 if (Strength[j] > Strength[j + 1]) {
@@ -89,15 +89,15 @@ public class FriendList {
                                 }
                             }
                         }
-
+                    
                         for (int i = list.size() - 1; i >= 0; i--) {
                             System.out.println(Name[i] + " " + Strength[i]);
                         }
                         System.out.println();
 
                         break;
-
-                    case "Agility":
+                    }
+                        if(attr.equalsIgnoreCase("agility")){
                         for (int i = 0; i < list.size(); i++) {
                             for (int j = 0; j < list.size() - 1; j++) {
                                 if (Agility[j] > Agility[j + 1]) {
@@ -127,10 +127,10 @@ public class FriendList {
                             System.out.println(Name[i] + " " + Agility[i]);
                         }
                         System.out.println("");
-
+                        
                         break;
-
-                    case "Intelligence":
+                        }
+                    if(attr.equalsIgnoreCase("intelligence")){
                         for (int i = 0; i < list.size(); i++) {
                             for (int j = 0; j < list.size() - 1; j++) {
                                 if (Intelligence[j] > Intelligence[j + 1]) {
@@ -160,10 +160,10 @@ public class FriendList {
                             System.out.println(Name[i] + " " + Intelligence[i]);
                         }
                         System.out.println();
-
+                    
                         break;
-
-                    case "Coordination":
+                    }
+                    if(attr.equalsIgnoreCase("coordination")){
                         for (int i = 0; i < list.size(); i++) {
                             for (int j = 0; j < list.size() - 1; j++) {
                                 if (Coordination[j] > Coordination[j + 1]) {
@@ -193,10 +193,10 @@ public class FriendList {
                             System.out.println(Name[i] + " " + Coordination[i]);
                         }
                         System.out.println();
-
+                    
                         break;
-
-                    case "Leadership":
+                    }
+                    if(attr.equalsIgnoreCase("leadership")){
                         for (int i = 0; i < list.size(); i++) {
                             for (int j = 0; j < list.size() - 1; j++) {
                                 if (Leadership[j] > Leadership[j + 1]) {
@@ -226,15 +226,16 @@ public class FriendList {
                             System.out.println(Name[i] + " " + Leadership[i]);
                         }
                         System.out.println();
-
+                    
                         break;
-
-                    default:
-                        System.out.println("Error");
+                    }
+                        else{
+                       System.out.println("Error");
+                    }
                 }
             }
         }
-    }
+    
 
     /**
      * findAbility(): accepts a String and an Integer, then lists out all
