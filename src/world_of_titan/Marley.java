@@ -38,7 +38,6 @@ public class Marley extends javax.swing.JFrame {
         marley = new javax.swing.JTextField();
         paradis = new javax.swing.JTextField();
         encryption = new javax.swing.JButton();
-        decryption = new javax.swing.JButton();
         back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,17 +76,10 @@ public class Marley extends javax.swing.JFrame {
             }
         });
 
-        encryption.setText("Encryption");
+        encryption.setText("Cipher");
         encryption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 encryptionActionPerformed(evt);
-            }
-        });
-
-        decryption.setText("Decryption");
-        decryption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                decryptionActionPerformed(evt);
             }
         });
 
@@ -117,8 +109,6 @@ public class Marley extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(decryption)
-                                    .addGap(18, 18, 18)
                                     .addComponent(encryption)
                                     .addGap(18, 18, 18)
                                     .addComponent(convertbtn))
@@ -147,8 +137,7 @@ public class Marley extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(convertbtn)
-                    .addComponent(encryption)
-                    .addComponent(decryption))
+                    .addComponent(encryption))
                 .addGap(45, 45, 45))
         );
 
@@ -268,15 +257,9 @@ public class Marley extends javax.swing.JFrame {
 
     private void encryptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encryptionActionPerformed
         // TODO add your handling code here:
-        Encryption e = new Encryption();
+        Security e = new Security();
         e.show();
     }//GEN-LAST:event_encryptionActionPerformed
-
-    private void decryptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decryptionActionPerformed
-        // TODO add your handling code here:
-         Decryption d = new Decryption();
-         d.show();
-    }//GEN-LAST:event_decryptionActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
@@ -422,7 +405,6 @@ public class MyHashMap<K, V> {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JButton convertbtn;
-    private javax.swing.JButton decryption;
     private javax.swing.JButton encryption;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

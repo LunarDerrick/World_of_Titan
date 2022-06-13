@@ -4,6 +4,8 @@
  */
 package world_of_titan;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hongb
@@ -15,6 +17,7 @@ public class Encryption extends javax.swing.JFrame {
      */
     public Encryption() {
         initComponents();
+        encrypted.setEditable(false);
     }
 
     /**
@@ -26,21 +29,177 @@ public class Encryption extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel3 = new javax.swing.JLabel();
+        encrypted = new javax.swing.JTextField();
+        message = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Encrypt = new javax.swing.JButton();
+        copy = new javax.swing.JButton();
+        decrypt = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setType(java.awt.Window.Type.POPUP);
+
+        jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel3.setText("Cipher");
+
+        encrypted.setEditable(false);
+        encrypted.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                encryptedActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Enter message to be encrypted/decrypted:");
+
+        jLabel2.setText("Encrypted/Decryted message:");
+
+        Encrypt.setText("Encrypt");
+        Encrypt.setToolTipText("");
+        Encrypt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EncryptActionPerformed(evt);
+            }
+        });
+
+        copy.setText("Copy");
+        copy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyActionPerformed(evt);
+            }
+        });
+
+        decrypt.setText("Decrypt");
+        decrypt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decryptActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(encrypted, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(copy)
+                                .addGap(12, 12, 12)
+                                .addComponent(decrypt)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Encrypt))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(encrypted, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Encrypt)
+                    .addComponent(copy)
+                    .addComponent(decrypt))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    public class Cipher{
+    public static char p[]  = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+            'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+            'w', 'x', 'y', 'z','(',')','^','$',',',' ' };
+    public static char ch[] = { 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O',
+            'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C',
+            'V', 'B', 'N', 'M' ,'^',',','$','(',' ',')'};
+ 
+    public static String doEncryption(String s)
+    {
+        char c[] = new char[(s.length())];
+        for (int i = 0; i < s.length(); i++)
+        {
+            for (int j = 0; j < 32; j++)
+            {
+                if (p[j] == s.charAt(i))
+                {
+                    c[i] = ch[j];
+                    break;
+                }
+            }
+        }
+        return (new String(c));
+    }
+ 
+    public static String doDecryption(String s)
+    {
+        char p1[] = new char[(s.length())];
+        for (int i = 0; i < s.length(); i++)
+        {
+            for (int j = 0; j < 32; j++)
+            {
+                if (ch[j] == s.charAt(i))
+                {
+                    p1[i] = p[j];
+                    break;
+                }
+            }
+        }
+        return (new String(p1));
+    }
+
+    }
+    private void EncryptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncryptActionPerformed
+        // TODO add your handling code here:
+        if(message.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Please Enter The Message!","Error",JOptionPane.ERROR_MESSAGE);
+        }else{
+            String encryptedMsg = Cipher.doEncryption(message.getText().toLowerCase());
+            encrypted.setText(encryptedMsg);
+        }
+        
+    }//GEN-LAST:event_EncryptActionPerformed
+
+    private void encryptedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encryptedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_encryptedActionPerformed
+
+    private void decryptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decryptActionPerformed
+        // TODO add your handling code here:
+        if(message.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Please Enter The Message!","Error",JOptionPane.ERROR_MESSAGE);
+        }else{
+            String encryptedMsg = Cipher.doDecryption(message.getText());
+            encrypted.setText(encryptedMsg);
+        }
+    }//GEN-LAST:event_decryptActionPerformed
+
+    private void copyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyActionPerformed
+        // TODO add your handling code here:
+        encrypted.copy();
+    }//GEN-LAST:event_copyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +238,13 @@ public class Encryption extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Encrypt;
+    private javax.swing.JButton copy;
+    private javax.swing.JButton decrypt;
+    private javax.swing.JTextField encrypted;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField message;
     // End of variables declaration//GEN-END:variables
 }
