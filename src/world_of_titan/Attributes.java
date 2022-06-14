@@ -4,17 +4,21 @@
  */
 package world_of_titan;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hongb
  */
 public class Attributes extends javax.swing.JFrame {
-
+ private java.util.LinkedList<Object> list = new java.util.LinkedList();
     /**
      * Creates new form Attributes
      */
     public Attributes() {
         initComponents();
+        soldier.setEditable(false);
+        
     }
 
     /**
@@ -26,21 +30,109 @@ public class Attributes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ability = new javax.swing.JTextField();
+        value = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        search = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        soldier = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        ability.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+
+        value.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setText("Finding ability:");
+
+        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setText("Value:");
+
+        jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel3.setText("Soldier:");
+
+        search.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+
+        soldier.setColumns(20);
+        soldier.setFont(new java.awt.Font("Viner Hand ITC", 1, 14)); // NOI18N
+        soldier.setRows(5);
+        jScrollPane1.setViewportView(soldier);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(search)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(ability, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                                .addComponent(value))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(search)
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+        String store ="";
+       if(ability.getText().equals("")||value.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Please Enter All Data!","Error",JOptionPane.ERROR_MESSAGE);
+        }else{
+        for(int i = 0;i<=Ally.jTable1.getColumnCount();i++){
+           for(int j = 0;j<=Ally.jTable1.getRowCount();j++){
+               if(ability.getText().equalsIgnoreCase(Ally.jTable1.getColumnName(i)) && value.getText().equals(Ally.jTable1.getValueAt(j, i))){
+                  
+                   list.add(Ally.jTable1.getValueAt(j, 0));
+              while(!list.isEmpty()){
+                  store += list.pop() +"\n";
+                }
+                    soldier.setText(store);
+                  
+             }
+           }
+       }
+     }
+    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +171,13 @@ public class Attributes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ability;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton search;
+    private javax.swing.JTextArea soldier;
+    private javax.swing.JTextField value;
     // End of variables declaration//GEN-END:variables
 }
