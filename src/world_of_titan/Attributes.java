@@ -129,7 +129,7 @@ public class Attributes extends javax.swing.JFrame {
                     soldier.setText(store);
                   
              }
-           }
+         }
        }
      }
     }//GEN-LAST:event_searchActionPerformed

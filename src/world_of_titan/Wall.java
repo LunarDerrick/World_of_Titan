@@ -4,17 +4,22 @@
  */
 package world_of_titan;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hongb
  */
 public class Wall extends javax.swing.JFrame {
-
+ private java.util.LinkedList<Object> list = new java.util.LinkedList();
     /**
      * Creates new form Wall
      */
     public Wall() {
         initComponents();
+        
     }
 
     /**
@@ -26,22 +31,206 @@ public class Wall extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        weak = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        enter = new javax.swing.JButton();
+        num = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        layer = new javax.swing.JTextArea();
+        Find = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel3.setText("Wall of  Maria");
+
+        jLabel1.setText("Number of layers:");
+
+        weak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                weakActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Weakest part of the wall is");
+
+        enter.setText("Enter");
+        enter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterActionPerformed(evt);
+            }
+        });
+
+        num.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        layer.setColumns(20);
+        layer.setRows(5);
+        jScrollPane2.setViewportView(layer);
+
+        Find.setText("Find");
+        Find.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Find, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(enter))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(180, 180, 180)
+                                .addComponent(weak, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(enter)
+                    .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(weak, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Find)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void weakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weakActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_weakActionPerformed
+
+    private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
+        // TODO add your handling code here:
+        String store = "";
+        for(int i = 0;i<Integer.parseInt(num.getText());i++){
+            list.add("Enter brick edges of layer "+(i+1));
+        }
+        while(!list.isEmpty()){
+           store += list.pop()+"\n";
+        }
+        layer.setText(store);
+    }//GEN-LAST:event_enterActionPerformed
+
+    private void numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numActionPerformed
+
+    private void FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindActionPerformed
+        // TODO add your handling code here:
+        String input="";
+        List<List<Integer>> walls = new ArrayList<>();
+        List<Integer> edges = new ArrayList<>();
+        List<Object> layers = new ArrayList<>();
+        
+        layers.add(layer.getText().split("\n"));
+
+        /*int max = 0;
+        do {
+            edges.clear();
+            for (int i = 1; i <= layers.size(); i++) {
+           
+                input += layers.get(i);
+                if (!input.isBlank()) {
+                    String[] arr = input.split(" ");
+                    for (String string : arr) {
+                        int temp = Integer.parseInt(string);
+                        edges.add(temp);
+                        if (temp >= max) {
+                            max = temp;
+                        }
+                    }
+                } else {
+                       JOptionPane.showMessageDialog(null,"Please Enter All Data!","Error",JOptionPane.ERROR_MESSAGE);
+                       num.setText("");
+                       layer.setText("");
+                }
+                if (max == 0) {
+                JOptionPane.showMessageDialog(null,"Please any number larger than 0!","Error",JOptionPane.ERROR_MESSAGE);
+                       num.setText("");
+                       layer.setText("");
+                }
+            }
+        } while (max == 0);
+
+        walls.add(edges);
+        List<Integer> index = walls.get(0);
+        WallOfMaria wom = new WallOfMaria();*/
+        String store = "";
+        //store += wom.getMost(index, max + 1);
+        store += layers.get(1);
+        weak.setText(store);
+    }//GEN-LAST:event_FindActionPerformed
+   public class WallOfMaria {
+    public WallOfMaria(){
+
+    }
+    public ArrayList<Integer> getMost(List<Integer> index, int t){
+        int max = 0;
+        ArrayList<Integer> most = new ArrayList<>();
+        int [] arr = new int[t];
+        for(int p=0; p<index.size(); p++) {
+            for (int q=p+1; q<index.size(); q++) {
+                if (index.get(p) == index.get(q)) {
+                    arr[index.get(p)]++;
+                    if (arr[index.get(p)] >= max) {
+                        max = arr[index.get(p)];
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < t; i++) {
+            if (arr[i] == max) {
+                most.add(i);
+            }
+        }
+        return most;
+    }
+}
     /**
      * @param args the command line arguments
      */
@@ -79,5 +268,15 @@ public class Wall extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Find;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton enter;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea layer;
+    private javax.swing.JTextField num;
+    private javax.swing.JTextField weak;
     // End of variables declaration//GEN-END:variables
 }
