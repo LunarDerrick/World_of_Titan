@@ -95,15 +95,14 @@ public class Scouting {
         do {
             // loops if non-integer
             try {
-                Scanner sc = new Scanner(System.in);
-                System.out.print("Enter starting point: ");
-                input = sc.nextInt();
+             
+                input = Integer.parseInt(Scouting1.point.getText());
                 // break loop if all conditions are fulfilled
                 incorrectInput = false;
                 // loops if out of range
                 if (input < 0 || input >= map.size()) {
-                    System.out.println("Exceed range");
-                    System.out.printf("Currently available: 0~%d\n", map.size() - 1);
+                    Scouting1.path.setText("Exceed range");
+                    Scouting1.path.setText("Currently available: 0~"+(map.size()-1));
                     incorrectInput = true;
                 }
             } catch (InputMismatchException e) {
@@ -131,7 +130,7 @@ public class Scouting {
         solve(start, visited);
 
         if (!hasCycle) {
-            System.out.println("\nNo path found.\n");
+            Scouting1.path.setText("\nNo path found.\n");
         }
 
         cycle.clear(); // in case reuse
@@ -149,13 +148,15 @@ public class Scouting {
      * path or not.
      */
     private void solve(int vertex, boolean[] visited) {
+        String store = "";
         if (vertex == start && cycle.size() == numOfVertices + 1) {
             hasCycle = true;
-            System.out.println("\nPath found!\n");
+            
             for (int i = 0; i < cycle.size() - 1; i++) {
-                System.out.print(cycle.get(i) + "-->");
+                store +=cycle.get(i) + "-->";
             }
-            System.out.println(cycle.get(cycle.size() - 1));
+            store += (cycle.get(cycle.size() - 1));
+            Scouting1.path.setText(store);
             return;
         }
 
