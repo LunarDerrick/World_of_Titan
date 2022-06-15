@@ -44,6 +44,11 @@ public class Attributes extends javax.swing.JFrame {
         ability.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
 
         value.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        value.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valueActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
         jLabel1.setText("Finding ability:");
@@ -133,6 +138,10 @@ public class Attributes extends javax.swing.JFrame {
        }
      }
     }//GEN-LAST:event_searchActionPerformed
+
+    private void valueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valueActionPerformed
 
     /**
      * @param args the command line arguments
