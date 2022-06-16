@@ -35,6 +35,7 @@ public class Scouting1 extends javax.swing.JFrame {
         find = new javax.swing.JButton();
         path = new javax.swing.JLabel();
         Map = new javax.swing.JButton();
+        back = new javax.swing.JButton();
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
         jLabel3.setText("Wall of  Maria");
@@ -74,6 +75,13 @@ public class Scouting1 extends javax.swing.JFrame {
             }
         });
 
+        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,7 +89,9 @@ public class Scouting1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(312, 312, 312)
+                        .addContainerGap()
+                        .addComponent(back)
+                        .addGap(270, 270, 270)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,8 +117,13 @@ public class Scouting1 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(back)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(202, 202, 202)
@@ -155,6 +170,14 @@ public class Scouting1 extends javax.swing.JFrame {
         m.setVisible(true);
     }//GEN-LAST:event_MapActionPerformed
 
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+        Menu m2 = new Menu();
+        m2.show();
+
+        dispose();
+    }//GEN-LAST:event_backActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -196,6 +219,7 @@ public class Scouting1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Map;
     private javax.swing.JLabel Path;
+    private javax.swing.JButton back;
     private javax.swing.JButton find;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

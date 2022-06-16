@@ -41,6 +41,7 @@ public class Wall extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         layer = new javax.swing.JTextArea();
         Find = new javax.swing.JButton();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,13 @@ public class Wall extends javax.swing.JFrame {
             }
         });
 
+        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,7 +98,9 @@ public class Wall extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
+                        .addContainerGap()
+                        .addComponent(back)
+                        .addGap(190, 190, 190)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(196, 196, 196)
@@ -111,13 +121,18 @@ public class Wall extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(180, 180, 180)
                                 .addComponent(weak, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(back)))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -209,6 +224,14 @@ public class Wall extends javax.swing.JFrame {
         weak.setText(store);
     }//GEN-LAST:event_FindActionPerformed
 
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+        Menu m2 = new Menu();
+        m2.show();
+
+        dispose();
+    }//GEN-LAST:event_backActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,6 +270,7 @@ public class Wall extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Find;
+    private javax.swing.JButton back;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton enter;
     private javax.swing.JLabel jLabel1;

@@ -26,21 +26,156 @@ public class Killing extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        location = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        best = new javax.swing.JTextArea();
+        back = new javax.swing.JButton();
+        Map = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel4.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel4.setText("Killing");
+
+        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setText("Enter location(s) of TITAN:");
+
+        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setText("Best Path:");
+
+        location.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        location.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        location.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locationActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        jButton1.setText("Find");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        best.setEditable(false);
+        best.setColumns(20);
+        best.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        best.setRows(5);
+        best.setToolTipText("");
+        best.setAutoscrolls(false);
+        jScrollPane1.setViewportView(best);
+
+        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
+        Map.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        Map.setText("Map");
+        Map.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(321, 321, 321)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(back))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(185, 185, 185)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(location, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                .addContainerGap(268, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Map, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(back)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addComponent(Map)
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void locationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locationActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        // attempt on 2.4 best path to kill titan
+        // scouting.findTitan();
+        Scouting scouting = new Scouting();
+        scouting.loadMap("mapData.txt");
+                String text = location.getText();
+                if (scouting.isNumeric(text) && scouting.withinRange(text)) {
+                    int value = Integer.parseInt(text);
+                    
+                    scouting.BFS(value);
+                } else {
+                    System.out.println("\n" + scouting.getErrorMessage() + "\n");
+                }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+        Menu m2 = new Menu();
+        m2.show();
+
+        dispose();
+    }//GEN-LAST:event_backActionPerformed
+
+    private void MapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapActionPerformed
+        // TODO add your handling code here:
+        Map m = new Map();
+        m.setVisible(true);
+    }//GEN-LAST:event_MapActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +214,14 @@ public class Killing extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Map;
+    private javax.swing.JButton back;
+    public static javax.swing.JTextArea best;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JTextField location;
     // End of variables declaration//GEN-END:variables
 }

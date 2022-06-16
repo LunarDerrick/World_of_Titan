@@ -286,11 +286,12 @@ public class Scouting {
             current = prevVertex[current];
         }
 
-        System.out.println("Best path:");
+        String store = "";
         for (int i = path.size() - 1; i > 0; i--) {
-            System.out.print(path.get(i) + "-->");
+            store += (path.get(i) + "-->");
         }
-        System.out.println(path.get(0));
+        store += (path.get(0))+"\n";
+        Killing.best.setText(store);
 
         // Assumption map won't change
         // Attempt to show multiple path
@@ -313,12 +314,13 @@ public class Scouting {
                 }
             }
             for (int i = path.size() - 1; i > 0; i--) {
-                System.out.print(path.get(i) + "-->");
+                store+=(path.get(i) + "-->");
             }
-            System.out.println(path.get(0));
+            store+=(path.get(0));
+            Killing.best.setText(store);
         }
 
-        System.out.println("");
+
     }
 
     /**
