@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author hongb
  */
 public class Wall extends javax.swing.JFrame {
- private java.util.LinkedList<Object> list = new java.util.LinkedList();
+ private java.util.LinkedList<String> list = new java.util.LinkedList();
     /**
      * Creates new form Wall
      */
@@ -148,7 +148,7 @@ public class Wall extends javax.swing.JFrame {
         // TODO add your handling code here:
         String store = "";
         for(int i = 0;i<Integer.parseInt(num.getText());i++){
-            list.add("Enter brick edges of layer "+(i+1));
+            list.add(" Enter brick edges of layer "+(i+1)+" ");
         }
         while(!list.isEmpty()){
            store += list.pop()+"\n";
@@ -165,15 +165,19 @@ public class Wall extends javax.swing.JFrame {
         String input="";
         List<List<Integer>> walls = new ArrayList<>();
         List<Integer> edges = new ArrayList<>();
-        List<Object> layers = new ArrayList<>();
+        List<String> layers = new ArrayList<>();
+        String[] a = layer.getText().split("\\r?\\n");
+        //store each layer's edges into arraylist 'layers'
+        for(String s:a){
+            layers.add(s);
+        }
         
-        layers.add(layer.getText().split("\n"));
-
-        /*int max = 0;
+        //for each element in arraylist 'layers', split the elements into single element
+        //compare which edge has the most frequency
+        int max = 0;
         do {
             edges.clear();
-            for (int i = 1; i <= layers.size(); i++) {
-           
+            for (int i=0; i <=layers.size()-1; i++) {
                 input += layers.get(i);
                 if (!input.isBlank()) {
                     String[] arr = input.split(" ");
@@ -199,38 +203,12 @@ public class Wall extends javax.swing.JFrame {
 
         walls.add(edges);
         List<Integer> index = walls.get(0);
-        WallOfMaria wom = new WallOfMaria();*/
+        WallOfMaria wom = new WallOfMaria();
         String store = "";
-        //store += wom.getMost(index, max + 1);
-        store += layers.get(1);
+        store += wom.getMost(index, max+1);
         weak.setText(store);
     }//GEN-LAST:event_FindActionPerformed
-   public class WallOfMaria {
-    public WallOfMaria(){
 
-    }
-    public ArrayList<Integer> getMost(List<Integer> index, int t){
-        int max = 0;
-        ArrayList<Integer> most = new ArrayList<>();
-        int [] arr = new int[t];
-        for(int p=0; p<index.size(); p++) {
-            for (int q=p+1; q<index.size(); q++) {
-                if (index.get(p) == index.get(q)) {
-                    arr[index.get(p)]++;
-                    if (arr[index.get(p)] >= max) {
-                        max = arr[index.get(p)];
-                    }
-                }
-            }
-        }
-        for (int i = 0; i < t; i++) {
-            if (arr[i] == max) {
-                most.add(i);
-            }
-        }
-        return most;
-    }
-}
     /**
      * @param args the command line arguments
      */
