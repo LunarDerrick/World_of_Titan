@@ -178,7 +178,7 @@ public class Wall extends javax.swing.JFrame {
         do {
             edges.clear();
             for (int i=0; i <=layers.size()-1; i++) {
-                input += layers.get(i);
+                input = layers.get(i);
                 if (!input.isBlank()) {
                     String[] arr = input.split(" ");
                     for (String string : arr) {
