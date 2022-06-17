@@ -1,0 +1,90 @@
+import java.util.Random;
+
+
+public class Titan {
+   
+
+    public static void TitanRisk(int a){
+        System.out.println("");
+        System.out.println("Generating "+a+" Titans ....");
+        
+        for(int j=1;j<=a;j++){
+        Random titan = new Random();
+        
+        int height = titan.nextInt(25-5) + 5;
+        
+        Integer[] arraylegs = {0,2,4};
+        int legs = arraylegs[titan.nextInt(3)];
+       
+        int speed = titan.nextInt(25-5) + 5;
+        
+        int pattern = titan.nextInt(3);
+        String patternstr = "";
+        
+        int climbing = titan.nextInt(2);
+        String climbingstr = "";
+        
+        Integer[] dangerrisk = new Integer[5];
+        
+        if(height>20){
+            dangerrisk[0]=3;
+        }else if(height>10){
+            dangerrisk[0]=2;
+        }else{
+            dangerrisk[0]=1;
+        }
+        
+        if(legs==4){
+            dangerrisk[1]=3;
+        }else if(legs==2){
+            dangerrisk[1]=2;
+        }else{
+            dangerrisk[1]=1;
+        }
+         
+        if(speed>20){
+            dangerrisk[2]=3;
+        }else if(speed>10){
+            dangerrisk[2]=2;
+        }else{
+            dangerrisk[2]=1;
+        }
+         
+        if(pattern==2){
+            dangerrisk[3]=3;
+             patternstr = "Not repeated pattern"; 
+        }else if(pattern==1){
+            dangerrisk[3]=2;
+             patternstr = "Repeated pattern"; 
+        }else{
+            dangerrisk[3]=1;
+            patternstr = "Normal pattern"; 
+        }
+        
+         if(climbing==1){
+            dangerrisk[4]=3;
+            climbingstr = "Can climb";
+        }else{
+            dangerrisk[4]=1;
+            climbingstr = "Cannot climb";
+        }
+        
+         int risk = 0;
+        for(int i=0; i<dangerrisk.length;i++){
+            risk+=dangerrisk[i];
+        }
+        
+        
+        if(risk<15){
+            System.out.println("Titan "+j+": Normal Titan ("+height+"m, "+legs+" legs, "+speed+"ms, "+patternstr+", "+climbingstr+") Risk="+risk); 
+        }else if(risk>=15 && risk<19){
+            System.out.println("Titan "+j+": Abnormal Titan Risk="+risk);
+        }else{
+            System.out.println("Titan "+j+": Nine TITAN Risk="+risk);
+        }
+     }
+    }
+
+
+    
+}

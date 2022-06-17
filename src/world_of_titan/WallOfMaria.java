@@ -6,9 +6,10 @@ public class WallOfMaria {
     public WallOfMaria(){
 
     }
-    public ArrayList<Integer> getMost(List<Integer> index, int t){
+    public String getMost(List<Integer> index, int t){
+        String store = "";
         int max = 0;
-        ArrayList<Integer> most = new ArrayList<>();
+        LinkedList<Integer> most = new LinkedList<>();
         int [] arr = new int[t];
         for(int p=0; p<index.size(); p++) {
             for (int q=p+1; q<index.size(); q++) {
@@ -25,6 +26,13 @@ public class WallOfMaria {
                 most.add(i);
             }
         }
-        return most;
+        while(!most.isEmpty()){
+            if(most.size() ==1){
+              store+=most.pop();
+            }else{
+         store += most.pop()+",";
+            }
+        }
+      return store;  
     }
 }

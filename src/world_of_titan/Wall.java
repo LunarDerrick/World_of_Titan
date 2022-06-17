@@ -19,6 +19,7 @@ public class Wall extends javax.swing.JFrame {
      */
     public Wall() {
         initComponents();
+        layer.setEditable(false);
         
     }
 
@@ -42,22 +43,29 @@ public class Wall extends javax.swing.JFrame {
         layer = new javax.swing.JTextArea();
         Find = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
         jLabel3.setText("Wall of  Maria");
 
+        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         jLabel1.setText("Number of layers:");
 
+        weak.setEditable(false);
+        weak.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        weak.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         weak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 weakActionPerformed(evt);
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         jLabel2.setText("Weakest part of the wall is");
 
+        enter.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         enter.setText("Enter");
         enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +73,8 @@ public class Wall extends javax.swing.JFrame {
             }
         });
 
+        num.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        num.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         num.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numActionPerformed(evt);
@@ -74,9 +84,11 @@ public class Wall extends javax.swing.JFrame {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         layer.setColumns(20);
+        layer.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         layer.setRows(5);
         jScrollPane2.setViewportView(layer);
 
+        Find.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         Find.setText("Find");
         Find.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +103,9 @@ public class Wall extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        jLabel4.setText("e.g. 2 4 6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,24 +119,26 @@ public class Wall extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(196, 196, 196)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Find, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Find, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(enter))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(150, 150, 150)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(180, 180, 180)
-                                .addComponent(weak, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(181, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(weak))))))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,13 +160,16 @@ public class Wall extends javax.swing.JFrame {
                         .addGap(79, 79, 79)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(weak, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(weak, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(Find)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,6 +181,8 @@ public class Wall extends javax.swing.JFrame {
 
     private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
         // TODO add your handling code here:
+
+        try{
         String store = "";
         for(int i = 0;i<Integer.parseInt(num.getText());i++){
             list.add(" Enter brick edges of layer "+(i+1)+" ");
@@ -169,6 +191,13 @@ public class Wall extends javax.swing.JFrame {
            store += list.pop()+"\n";
         }
         layer.setText(store);
+        layer.setEditable(true);
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Please enter an integer!","Error",JOptionPane.ERROR_MESSAGE);
+              num.setText("");
+              layer.setText(""); 
+        }
+       
     }//GEN-LAST:event_enterActionPerformed
 
     private void numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numActionPerformed
@@ -177,6 +206,7 @@ public class Wall extends javax.swing.JFrame {
 
     private void FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindActionPerformed
         // TODO add your handling code here:
+        try{
         String input="";
         List<List<Integer>> walls = new ArrayList<>();
         List<Integer> edges = new ArrayList<>();
@@ -222,6 +252,9 @@ public class Wall extends javax.swing.JFrame {
         String store = "";
         store += wom.getMost(index, max+1);
         weak.setText(store);
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Invalid format!","Error",JOptionPane.ERROR_MESSAGE);   
+        }
     }//GEN-LAST:event_FindActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -276,6 +309,7 @@ public class Wall extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea layer;
     private javax.swing.JTextField num;

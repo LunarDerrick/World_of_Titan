@@ -1,0 +1,118 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Marley word converter
+        MyHashMap<Character, Character> Marley = new MyHashMap<Character, Character>();
+        Marley.put('a', 'j');
+        Marley.put('b', 'c');
+        Marley.put('c', 't');
+        Marley.put('d', 'a');
+        Marley.put('e', 'k');
+        Marley.put('f', 'z');
+        Marley.put('g', 's');
+        Marley.put('h', 'i');
+        Marley.put('i', 'w');
+        Marley.put('j', 'x');
+        Marley.put('k', 'o');
+        Marley.put('l', 'n');
+        Marley.put('m', 'g');
+        Marley.put('n', 'b');
+        Marley.put('o', 'f');
+        Marley.put('p', 'h');
+        Marley.put('q', 'l');
+        Marley.put('r', 'd');
+        Marley.put('s', 'e');
+        Marley.put('t', 'y');
+        Marley.put('u', 'm');
+        Marley.put('v', 'v');
+        Marley.put('w', 'u');
+        Marley.put('x', 'p');
+        Marley.put('y', 'q');
+        Marley.put('z', 'r');
+        Marley.put('A', 'J');
+        Marley.put('B', 'C');
+        Marley.put('C', 'T');
+        Marley.put('D', 'A');
+        Marley.put('E', 'K');
+        Marley.put('F', 'Z');
+        Marley.put('G', 'S');
+        Marley.put('H', 'I');
+        Marley.put('I', 'W');
+        Marley.put('J', 'X');
+        Marley.put('K', 'O');
+        Marley.put('L', 'N');
+        Marley.put('M', 'G');
+        Marley.put('N', 'B');
+        Marley.put('O', 'F');
+        Marley.put('P', 'H');
+        Marley.put('Q', 'L');
+        Marley.put('R', 'D');
+        Marley.put('S', 'E');
+        Marley.put('T', 'Y');
+        Marley.put('U', 'M');
+        Marley.put('V', 'V');
+        Marley.put('W', 'U');
+        Marley.put('X', 'P');
+        Marley.put('Y', 'Q');
+        Marley.put('Z', 'R');
+        Marley.put('$', ' ');
+        Marley.put(',', ',');
+        Marley.put('(', ' ' );
+        Marley.put(')', ' ');
+        
+        Scanner a = new Scanner(System.in);
+        while(true){
+            System.out.print("Enter Marley Sentence: ");
+            String marley = a.nextLine();
+            if (marley.isBlank()){
+                break;
+            }
+            char[] marleychar = marley.toCharArray();
+
+            Stack<Character>s = new Stack<>();
+            for (int i = 0; i < marleychar.length; i++) {
+                
+                if(marleychar[i]=='^'){
+                    i++;
+                    System.out.print(Character.toUpperCase(Marley.get(marleychar[i++])));
+                }
+                
+                if(marleychar[i]=='('){
+                    i++;
+                    while(marleychar[i]!=')'){
+                        
+                        if(marleychar[i]=='^'){
+                            i++;
+                            s.push(Character.toUpperCase(marleychar[i++]));
+                        }
+                        
+                        else{
+                            s.push(marleychar[i++]);
+                        } 
+                    }
+                                        
+                    while(!s.isEmpty()){
+                        System.out.print(Marley.get(s.pop()));
+                    }
+                }
+                else{
+                    System.out.print(Marley.get(marleychar[i]));
+                }
+            }
+            System.out.println();
+        }
+        
+        //Cipher
+        while(true){
+            System.out.print("Enter Marley Sentence: ");
+            String message = a.nextLine();
+            if (message.isBlank()){
+                break;
+            }
+            String key = "MARLEY";
+            String encryptedMsg = Cipher.encrypt(message, key);
+            System.out.println("String: " + message);
+            System.out.println("Encrypted message: " + encryptedMsg);
+            System.out.println("Decrypted message: " + Cipher.decrypt(encryptedMsg, key));
+        }
+}
