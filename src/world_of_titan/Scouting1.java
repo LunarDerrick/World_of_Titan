@@ -15,6 +15,7 @@ public class Scouting1 extends javax.swing.JFrame {
      */
     public Scouting1() {
         initComponents();
+        
     }
 
     /**
@@ -36,6 +37,7 @@ public class Scouting1 extends javax.swing.JFrame {
         path = new javax.swing.JLabel();
         Map = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
         jLabel3.setText("Wall of  Maria");
@@ -43,22 +45,33 @@ public class Scouting1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(831, 589));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Scouting");
+        jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 27, 330, 105));
 
+        point.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        point.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         point.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pointActionPerformed(evt);
             }
         });
+        getContentPane().add(point, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 82, -1));
 
-        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel2.setText("Enter starting point:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, 22));
 
-        Path.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        Path.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         Path.setText("Path:");
+        getContentPane().add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(607, 334, 258, -1));
 
+        find.setBackground(new java.awt.Color(255, 255, 204));
         find.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         find.setText("Find");
         find.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +79,13 @@ public class Scouting1 extends javax.swing.JFrame {
                 findActionPerformed(evt);
             }
         });
+        getContentPane().add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, -1));
 
+        path.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        path.setForeground(new java.awt.Color(255, 102, 0));
+        getContentPane().add(path, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 600, 40));
+
+        Map.setBackground(new java.awt.Color(255, 255, 204));
         Map.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         Map.setText("Map");
         Map.addActionListener(new java.awt.event.ActionListener() {
@@ -74,77 +93,22 @@ public class Scouting1 extends javax.swing.JFrame {
                 MapActionPerformed(evt);
             }
         });
+        getContentPane().add(Map, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 422, 206, -1));
 
+        back.setBackground(new java.awt.Color(255, 255, 204));
         back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(back)
-                        .addGap(270, 270, 270)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(212, 212, 212)
-                                .addComponent(Path)
-                                .addGap(18, 18, 18)
-                                .addComponent(path))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(186, 186, 186)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(point, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(52, 52, 52)
-                                        .addComponent(find))
-                                    .addComponent(Map, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(back)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(point, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(find))
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Path)
-                            .addComponent(path))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(Map)
-                .addGap(140, 140, 140))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\World_of_Titan\\src\\world_of_titan\\DS Assignment\\Scouting.Legion.full.1504109.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void pointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointActionPerformed
@@ -221,6 +185,7 @@ public class Scouting1 extends javax.swing.JFrame {
     private javax.swing.JLabel Path;
     private javax.swing.JButton back;
     private javax.swing.JButton find;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

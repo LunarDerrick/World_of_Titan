@@ -43,17 +43,26 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         jButton1 = new javax.swing.JButton();
         generate = new javax.swing.JLabel();
         back = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        kill = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
-        jLabel3.setText("Wall of  Maria");
+        jLabel3.setText("Titans");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 23, -1, 105));
 
         titan.setEditable(false);
         titan.setColumns(20);
         titan.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         titan.setRows(5);
         jScrollPane1.setViewportView(titan);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 205, 438, 120));
 
         num.setFont(new java.awt.Font("Viner Hand ITC", 1, 18)); // NOI18N
         num.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -62,9 +71,11 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
                 numActionPerformed(evt);
             }
         });
+        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 308, 103, 160));
 
         jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
         jLabel1.setText("Enter number of TITAN:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 377, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         jButton1.setText("Generate");
@@ -73,6 +84,8 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 480, 103, -1));
+        getContentPane().add(generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 512, -1, -1));
 
         back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -80,56 +93,20 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
                 backActionPerformed(evt);
             }
         });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 880, 590));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(back)
-                .addGap(198, 198, 198)
-                .addComponent(jLabel3)
-                .addGap(280, 286, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                    .addComponent(num))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(generate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(back)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(generate)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76))))
-        );
+        jLabel4.setText("Sequence to be killed:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, -1));
+
+        jLabel5.setText("Total distance moved:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
+
+        kill.setText("jLabel6");
+        getContentPane().add(kill, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
+
+        total.setText("jLabel7");
+        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -361,9 +338,9 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         for (Titan titan : pq) {
             sequence = titan.getIndex();
             if (counter == pq.size() - 1) {
-                list.add("Titan " + sequence );
+                kill.setText("Titan " + sequence );
             } else {
-                list.add("Titan " + sequence + " --> ");
+                kill.setText("Titan " + sequence + " --> ");
             }
             distance += abs(sequence - initial);
             initial = sequence;
@@ -371,7 +348,7 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
             counter++;
         }
 
-        list.add("\nTotal distance moved: " + distance);
+        total.setText(distance+"");
         while(!list.isEmpty()){
         store += list.pop();
         titan.setText(store);
@@ -455,9 +432,14 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
     private javax.swing.JLabel generate;
     private static javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel kill;
     public static javax.swing.JTextField num;
     private javax.swing.JTextArea titan;
+    private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
 }

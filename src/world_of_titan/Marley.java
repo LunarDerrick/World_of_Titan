@@ -39,9 +39,13 @@ public class Marley extends javax.swing.JFrame {
         paradis = new javax.swing.JTextField();
         encryption = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 506, 547, 0));
 
+        convertbtn.setBackground(new java.awt.Color(255, 204, 102));
         convertbtn.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         convertbtn.setText("Convert");
         convertbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -49,17 +53,26 @@ public class Marley extends javax.swing.JFrame {
                 convertbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(convertbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 518, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Marley Converter");
+        jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(255, 255, 255)));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 550, 105));
 
-        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Marley:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Paradis:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, -1, -1));
 
-        marley.setFont(new java.awt.Font("Viner Hand ITC", 0, 24)); // NOI18N
+        marley.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         marley.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         marley.setToolTipText("");
         marley.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -68,15 +81,18 @@ public class Marley extends javax.swing.JFrame {
                 marleyActionPerformed(evt);
             }
         });
+        getContentPane().add(marley, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 547, 145));
 
-        paradis.setFont(new java.awt.Font("Viner Hand ITC", 0, 24)); // NOI18N
+        paradis.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         paradis.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         paradis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paradisActionPerformed(evt);
             }
         });
+        getContentPane().add(paradis, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 547, 145));
 
+        encryption.setBackground(new java.awt.Color(255, 204, 102));
         encryption.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         encryption.setText("Cipher");
         encryption.addActionListener(new java.awt.event.ActionListener() {
@@ -84,64 +100,21 @@ public class Marley extends javax.swing.JFrame {
                 encryptionActionPerformed(evt);
             }
         });
+        getContentPane().add(encryption, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 518, -1, -1));
 
+        back.setBackground(new java.awt.Color(255, 204, 102));
+        back.setForeground(new java.awt.Color(0, 0, 0));
         back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(back)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(198, 198, 198))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 150, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(paradis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(encryption)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(convertbtn))
-                                .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
-                                .addComponent(marley)
-                                .addComponent(jLabel2)))
-                        .addGap(128, 128, 128))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(marley, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(paradis, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(convertbtn)
-                    .addComponent(encryption))
-                .addGap(45, 45, 45))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\World_of_Titan\\src\\world_of_titan\\DS Assignment\\Et6K6QuVgAIQEqb.jpg")); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -262,7 +235,7 @@ public class Marley extends javax.swing.JFrame {
         Security e = new Security();
         e.show();
         
-        dispose();
+        
     }//GEN-LAST:event_encryptionActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -413,6 +386,7 @@ public class MyHashMap<K, V> {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JProgressBar jProgressBar1;
     public static javax.swing.JTextField marley;
     public static javax.swing.JTextField paradis;

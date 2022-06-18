@@ -37,29 +37,41 @@ public class Encryption extends javax.swing.JFrame {
         Encrypt = new javax.swing.JButton();
         copy = new javax.swing.JButton();
         decrypt = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setType(java.awt.Window.Type.POPUP);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Cipher");
+        jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 230, 96));
 
         encrypted.setEditable(false);
-        encrypted.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        encrypted.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         encrypted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 encryptedActionPerformed(evt);
             }
         });
+        getContentPane().add(encrypted, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 252, 253, 59));
 
-        message.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        message.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 167, 253, 56));
 
-        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Enter message to be encrypted/decrypted:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 183, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Encrypted/Decryted message:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 270, -1, -1));
 
+        Encrypt.setBackground(new java.awt.Color(255, 255, 51));
         Encrypt.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         Encrypt.setText("Encrypt");
         Encrypt.setToolTipText("");
@@ -68,7 +80,9 @@ public class Encryption extends javax.swing.JFrame {
                 EncryptActionPerformed(evt);
             }
         });
+        getContentPane().add(Encrypt, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 343, -1, -1));
 
+        copy.setBackground(new java.awt.Color(255, 255, 51));
         copy.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         copy.setText("Insert to converter");
         copy.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +90,9 @@ public class Encryption extends javax.swing.JFrame {
                 copyActionPerformed(evt);
             }
         });
+        getContentPane().add(copy, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 343, -1, -1));
 
+        decrypt.setBackground(new java.awt.Color(255, 255, 51));
         decrypt.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         decrypt.setText("Decrypt");
         decrypt.addActionListener(new java.awt.event.ActionListener() {
@@ -84,57 +100,15 @@ public class Encryption extends javax.swing.JFrame {
                 decryptActionPerformed(evt);
             }
         });
+        getContentPane().add(decrypt, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 343, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(encrypted, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(copy)
-                                .addGap(12, 12, 12)
-                                .addComponent(decrypt)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Encrypt))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(encrypted, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Encrypt)
-                    .addComponent(copy)
-                    .addComponent(decrypt))
-                .addContainerGap(73, Short.MAX_VALUE))
-        );
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\World_of_Titan\\src\\world_of_titan\\DS Assignment\\marley.jpg")); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     public class Cipher{
     public static char p[]  = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
@@ -259,6 +233,7 @@ public class Encryption extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     public static javax.swing.JTextField message;
     // End of variables declaration//GEN-END:variables
 }
