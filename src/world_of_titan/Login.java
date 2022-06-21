@@ -43,7 +43,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 114, 100, 100));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\Studies\\DS Assignment\\477-4779107_wallpaper-sony-xperia-xz3-attack-on-titan-logo.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\World_of_Titan\\src\\world_of_titan\\DS Assignment\\477-4779107_wallpaper-sony-xperia-xz3-attack-on-titan-logo.png")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, 0, 650, 590));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 153));

@@ -43,40 +43,43 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         jButton1 = new javax.swing.JButton();
         generate = new javax.swing.JLabel();
         back = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         kill = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Titans");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 23, -1, 105));
+        jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 300, 105));
 
         titan.setEditable(false);
         titan.setColumns(20);
-        titan.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        titan.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         titan.setRows(5);
         jScrollPane1.setViewportView(titan);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 205, 438, 120));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 438, 100));
 
-        num.setFont(new java.awt.Font("Viner Hand ITC", 1, 18)); // NOI18N
+        num.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
         num.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         num.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numActionPerformed(evt);
             }
         });
-        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 308, 103, 160));
+        getContentPane().add(num, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 103, 160));
 
-        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel1.setText("Enter number of TITAN:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 377, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         jButton1.setText("Generate");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -84,9 +87,10 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 480, 103, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 103, -1));
         getContentPane().add(generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 512, -1, -1));
 
+        back.setBackground(new java.awt.Color(255, 255, 204));
         back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,19 +98,24 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
             }
         });
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 880, 590));
 
+        jLabel4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel4.setText("Sequence to be killed:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel5.setText("Total distance moved:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
 
-        kill.setText("jLabel6");
-        getContentPane().add(kill, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
+        kill.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        getContentPane().add(kill, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 160, 20));
 
-        total.setText("jLabel7");
-        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, -1, -1));
+        total.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 220, -1));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\World_of_Titan\\src\\world_of_titan\\DS Assignment\\Attack-on-Titan-Eren-1200x675.jpg")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -328,19 +337,19 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
             pq.add(pqtmp.poll());
         }
 
-        list.add("\nSequence to be killed: ");
-
         int initial = 0;
         int distance = 0;
         int sequence;
         int counter = 0;
 
+        String store2="";
+        
         for (Titan titan : pq) {
             sequence = titan.getIndex();
             if (counter == pq.size() - 1) {
-                kill.setText("Titan " + sequence );
+                store2+=("Titan " + sequence );
             } else {
-                kill.setText("Titan " + sequence + " --> ");
+                store2+=("Titan " + sequence + " --> ");
             }
             distance += abs(sequence - initial);
             initial = sequence;
@@ -349,6 +358,7 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         }
 
         total.setText(distance+"");
+        kill.setText(store2);
         while(!list.isEmpty()){
         store += list.pop();
         titan.setText(store);
