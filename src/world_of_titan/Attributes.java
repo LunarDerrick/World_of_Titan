@@ -41,23 +41,25 @@ public class Attributes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ability.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        ability.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        ability.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        value.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        value.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        value.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         value.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valueActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel1.setText("Finding ability:");
 
-        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel2.setText("Value:");
 
-        jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
-        jLabel3.setText("Soldier:");
+        jLabel3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel3.setText("Soldier(s):");
 
         search.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         search.setText("Search");
@@ -67,9 +69,11 @@ public class Attributes extends javax.swing.JFrame {
             }
         });
 
-        soldier.setColumns(20);
-        soldier.setFont(new java.awt.Font("Viner Hand ITC", 1, 14)); // NOI18N
+        soldier.setEditable(false);
+        soldier.setColumns(10);
+        soldier.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         soldier.setRows(5);
+        soldier.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(soldier);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -90,9 +94,9 @@ public class Attributes extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(ability, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                                 .addComponent(value))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56)))
-                .addContainerGap(142, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(82, 82, 82)))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +115,7 @@ public class Attributes extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(search)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,6 +126,8 @@ public class Attributes extends javax.swing.JFrame {
         String store ="";
        if(ability.getText().equals("")||value.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please Enter All Data!","Error",JOptionPane.ERROR_MESSAGE);
+        }else if(Ally.jTable1==null){
+            JOptionPane.showMessageDialog(null,"No soldier(s) found!","Error",JOptionPane.ERROR_MESSAGE);
         }else{
         for(int i = 0;i<=Ally.jTable1.getColumnCount();i++){
            for(int j = 0;j<=Ally.jTable1.getRowCount();j++){

@@ -64,7 +64,7 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         titan.setRows(5);
         jScrollPane1.setViewportView(titan);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 438, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 438, 110));
 
         num.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
         num.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -108,7 +108,8 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
 
         kill.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
-        getContentPane().add(kill, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 160, 20));
+        kill.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(kill, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 330, 20));
 
         total.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 220, -1));

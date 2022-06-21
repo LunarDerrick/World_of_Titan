@@ -4,8 +4,11 @@
  */
 package world_of_titan;
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import javax.swing.table.TableRowSorter;
 
 /**
@@ -20,6 +23,13 @@ public class Ally extends javax.swing.JFrame {
     public Ally() {
         initComponents();
         rowsort();
+        JTableHeader header = jTable1.getTableHeader();
+        Font headerfont = new Font("Tempus Sans ITC", Font.BOLD, 12);
+        header.setFont(headerfont);
+       
+        jTable1.getTableHeader().setBackground(Color.red);
+        jTable1.getTableHeader().setForeground(new Color(0,153,255));
+       
     }
 
     /**
@@ -44,27 +54,37 @@ public class Ally extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         delete1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel1.setText("Enter name:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 121, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel2.setText("Enter characteristics:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 178, -1, -1));
 
+        name.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
+        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 120, 175, -1));
 
+        characteristics.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         characteristics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 characteristicsActionPerformed(evt);
             }
         });
+        getContentPane().add(characteristics, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 177, 180, -1));
 
+        add.setBackground(new java.awt.Color(153, 255, 255));
         add.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         add.setText("Add");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +92,9 @@ public class Ally extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 177, -1, -1));
 
+        clear.setBackground(new java.awt.Color(153, 255, 255));
         clear.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         clear.setText("Clear");
         clear.addActionListener(new java.awt.event.ActionListener() {
@@ -80,17 +102,25 @@ public class Ally extends javax.swing.JFrame {
                 clearActionPerformed(evt);
             }
         });
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Allies");
+        jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 9, 330, 100));
 
+        back.setBackground(new java.awt.Color(153, 255, 255));
         back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 9, -1, -1));
 
+        delete.setBackground(new java.awt.Color(153, 255, 255));
         delete.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         delete.setText("Delete");
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -98,10 +128,13 @@ public class Ally extends javax.swing.JFrame {
                 deleteActionPerformed(evt);
             }
         });
+        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 531, -1, -1));
 
         jScrollPane1.setToolTipText("");
 
-        jTable1.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
+        jTable1.setBackground(new java.awt.Color(153, 255, 255));
+        jTable1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -118,6 +151,7 @@ public class Ally extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable1.setGridColor(new java.awt.Color(153, 255, 255));
         jTable1.setName(""); // NOI18N
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
@@ -125,6 +159,9 @@ public class Ally extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jScrollPane1);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 221, 780, 298));
+
+        delete1.setBackground(new java.awt.Color(153, 255, 255));
         delete1.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         delete1.setText("Search");
         delete1.addActionListener(new java.awt.event.ActionListener() {
@@ -132,72 +169,19 @@ public class Ally extends javax.swing.JFrame {
                 delete1ActionPerformed(evt);
             }
         });
+        getContentPane().add(delete1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 531, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(88, 88, 88)
-                        .addComponent(name))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(29, 29, 29)
-                        .addComponent(characteristics, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(add, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(clear, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(138, 138, 138))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(back)
-                        .addGap(272, 272, 272)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(delete1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(delete)
-                .addGap(45, 45, 45))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clear))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(characteristics, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(delete)
-                    .addComponent(delete1))
-                .addGap(37, 37, 37))
-        );
+        jLabel4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("e.g 1 2 3 4 5 6 7");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(437, 180, -1, -1));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\World_of_Titan\\src\\world_of_titan\\DS Assignment\\dbbryuh-c7a6e08e-2690-453d-8d6c-c402ecd5c1de.jpg")); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 590));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
   
     
@@ -329,6 +313,8 @@ public class Ally extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JTable jTable1;

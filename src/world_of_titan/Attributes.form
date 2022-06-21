@@ -39,12 +39,12 @@
                               <Component id="ability" pref="143" max="32767" attributes="0"/>
                               <Component id="value" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" min="-2" pref="288" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="262" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="142" max="32767" attributes="0"/>
+              <EmptySpace pref="149" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,7 +68,7 @@
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="search" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace pref="138" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -77,15 +77,17 @@
     <Component class="javax.swing.JTextField" name="ability">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="0"/>
+          <Font name="Tempus Sans ITC" size="14" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="value">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="0"/>
+          <Font name="Tempus Sans ITC" size="14" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valueActionPerformed"/>
@@ -94,7 +96,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="0"/>
+          <Font name="Tempus Sans ITC" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Finding ability:"/>
       </Properties>
@@ -102,7 +104,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="0"/>
+          <Font name="Tempus Sans ITC" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Value:"/>
       </Properties>
@@ -110,9 +112,9 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Viner Hand ITC" size="14" style="0"/>
+          <Font name="Tempus Sans ITC" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Soldier:"/>
+        <Property name="text" type="java.lang.String" value="Soldier(s):"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="search">
@@ -135,11 +137,15 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="soldier">
           <Properties>
-            <Property name="columns" type="int" value="20"/>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="10"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Viner Hand ITC" size="14" style="1"/>
+              <Font name="Tempus Sans ITC" size="14" style="1"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
