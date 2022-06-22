@@ -95,14 +95,14 @@ public class Scouting {
         do {
             // loops if non-integer
             try {
-             
+
                 input = Integer.parseInt(Scouting1.point.getText());
                 // break loop if all conditions are fulfilled
                 incorrectInput = false;
                 // loops if out of range
                 if (input < 0 || input >= map.size()) {
                     Scouting1.path.setText("Exceed range");
-                    Scouting1.path.setText("Currently available: 0~"+(map.size()-1));
+                    Scouting1.path.setText("Currently available: 0~" + (map.size() - 1));
                     incorrectInput = true;
                 }
             } catch (InputMismatchException e) {
@@ -151,9 +151,9 @@ public class Scouting {
         String store = "";
         if (vertex == start && cycle.size() == numOfVertices + 1) {
             hasCycle = true;
-            
+
             for (int i = 0; i < cycle.size() - 1; i++) {
-                store +=cycle.get(i) + "-->";
+                store += cycle.get(i) + "-->";
             }
             store += (cycle.get(cycle.size() - 1));
             Scouting1.path.setText(store);
@@ -290,7 +290,7 @@ public class Scouting {
         for (int i = path.size() - 1; i > 0; i--) {
             store += (path.get(i) + "-->");
         }
-        store += (path.get(0))+"\n";
+        store += (path.get(0)) + "\n";
         Killing.best.setText(store);
 
         // Assumption map won't change
@@ -314,12 +314,11 @@ public class Scouting {
                 }
             }
             for (int i = path.size() - 1; i > 0; i--) {
-                store+=(path.get(i) + "-->");
+                store += (path.get(i) + "-->");
             }
-            store+=(path.get(0));
+            store += (path.get(0));
             Killing.best.setText(store);
         }
-
 
     }
 
@@ -348,14 +347,14 @@ public class Scouting {
             if(inputStr.length==0){
                 Killing.best.setText("Please enter the location(s)");
             }else{
-            for (int i = 0; i < inputStr.length; i++) {
-                if (isNumeric(inputStr[i]) && withinRange(inputStr[i])) {
-                    inputList[i] = Integer.parseInt(inputStr[i]);
-                } else {
-                    Killing.best.setText(getErrorMessage());
-                    incorrectInput = true;
+                for (int i = 0; i < inputStr.length; i++) {
+                    if (isNumeric(inputStr[i]) && withinRange(inputStr[i])) {
+                        inputList[i] = Integer.parseInt(inputStr[i]);
+                    } else {
+                        Killing.best.setText(getErrorMessage());
+                        incorrectInput = true;
+                    }
                 }
-            }
             }
         } while (incorrectInput);
 
@@ -363,14 +362,14 @@ public class Scouting {
     }
 
     /**
-     * BFS2(): similar to BFS(), it finds the shortest path with
-     * a non-constant destination.
+     * BFS2(): similar to BFS(), it finds the shortest path with a non-constant
+     * destination.
      *
      * Uses findShortestPath2() as helper function.
-     * 
+     *
      * @param inputList: titan's move set, processed by findMovingTitan().
      */
-    private void BFS2(int[] inputList) {
+    public void BFS2(int[] inputList) {
         boolean[] visited = new boolean[numOfVertices];
         int[] prevVertex = new int[numOfVertices];
         Queue<Integer> queue = new Queue();
@@ -419,12 +418,13 @@ public class Scouting {
     }
 
     /**
-     * findShortestPath2(): similar to findShortestPath(), only output extra time passed.
-     * 
-     * @param destination : value carried over from findTitan(), used to
-     * locate data required to be output.
-     * @param prevVertex : data processed by BFS(), used to trace the
-     * found path.
+     * findShortestPath2(): similar to findShortestPath(), only output extra
+     * time passed.
+     *
+     * @param destination : value carried over from findTitan(), used to locate
+     * data required to be output.
+     * @param prevVertex : data processed by BFS(), used to trace the found
+     * path.
      * @param time : value of time passed, provided by BFS2().
      */
     private void findShortestPath2(int destination, int[] prevVertex, int time) {
@@ -439,10 +439,10 @@ public class Scouting {
 
         String store = "";
         for (int i = path.size() - 1; i > 0; i--) {
-            store+=(path.get(i) + "-->");
+            store += (path.get(i) + "-->");
         }
-        store+=(path.get(0))+"\n";
-        
+        store += (path.get(0)) + "\n";
+
         Killing.best.setText(store);
 
         boolean hasSix = false;
@@ -466,11 +466,11 @@ public class Scouting {
             for (int i = path.size() - 1; i > 0; i--) {
                 System.out.print(path.get(i) + "-->");
             }
-            store+=(path.get(0));
+            store += (path.get(0));
             Killing.best.setText(store);
         }
 
-        Killing.time.setText(time+"");
+        Killing.time.setText(time + "");
     }
 
     /**

@@ -155,7 +155,33 @@ public class Killing extends javax.swing.JFrame {
         // TODO add your handling code here:
         Scouting scouting = new Scouting();
         scouting.loadMap("mapData.txt");
-        scouting.findMovingTitan(); 
+//        scouting.findMovingTitan();
+        
+        boolean hasError = false;
+        int[] inputList = {-1};
+        // collect raw input
+        // input example: 1 3 5 (space)
+        String input = Killing.location.getText();
+        String[] inputStr = input.split(" ");
+        // convert input to integer array
+        inputList = new int[inputStr.length];
+        if (inputStr.length == 0) {
+            Killing.best.setText("Please enter the location(s)");
+        } else {
+            for (int i = 0; i < inputStr.length; i++) {
+                if (scouting.isNumeric(inputStr[i]) && scouting.withinRange(inputStr[i])) {
+                    inputList[i] = Integer.parseInt(inputStr[i]);
+                } else {
+                    Killing.best.setText(scouting.getErrorMessage());
+                    hasError = true;
+                    break;
+                }
+            }
+            
+            if (!hasError) {
+                scouting.BFS2(inputList);
+            }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
