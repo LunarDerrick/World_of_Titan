@@ -113,7 +113,7 @@ public class Wall extends javax.swing.JFrame {
 
         back.setBackground(new java.awt.Color(255, 255, 204));
         back.setForeground(new java.awt.Color(51, 51, 255));
-        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/world_of_titan/DS Assignment/icons8-reply-arrow-30.png"))); // NOI18N
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
@@ -126,7 +126,7 @@ public class Wall extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 232, -1, -1));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\Studies\\DS Assignment\\v-vilimir-petkov-highresscreenshot00010.jpg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/world_of_titan/DS Assignment/v-vilimir-petkov-highresscreenshot00010.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 590));
 
         pack();

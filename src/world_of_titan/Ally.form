@@ -147,7 +147,7 @@
           <Color blue="ff" green="ff" red="99" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\hongb\OneDrive\Documents\NetBeansProjects\Assignment\src\assignment\DS Assignment\icons8-reply-arrow-30.png"/>
+          <Image iconType="3" name="/world_of_titan/DS Assignment/icons8-reply-arrow-30.png"/>
         </Property>
       </Properties>
       <Events>
@@ -322,7 +322,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\hongb\OneDrive\Documents\NetBeansProjects\World_of_Titan\src\world_of_titan\DS Assignment\dbbryuh-c7a6e08e-2690-453d-8d6c-c402ecd5c1de.jpg"/>
+          <Image iconType="3" name="/world_of_titan/DS Assignment/dbbryuh-c7a6e08e-2690-453d-8d6c-c402ecd5c1de.jpg"/>
         </Property>
       </Properties>
       <Constraints>

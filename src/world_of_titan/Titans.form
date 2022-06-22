@@ -6,7 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -135,7 +135,7 @@
           <Color blue="cc" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\hongb\OneDrive\Documents\NetBeansProjects\Assignment\src\assignment\DS Assignment\icons8-reply-arrow-30.png"/>
+          <Image iconType="3" name="/world_of_titan/DS Assignment/icons8-reply-arrow-30.png"/>
         </Property>
       </Properties>
       <Events>
@@ -204,7 +204,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\hongb\OneDrive\Documents\NetBeansProjects\World_of_Titan\src\world_of_titan\DS Assignment\Attack-on-Titan-Eren-1200x675.jpg"/>
+          <Image iconType="3" name="/world_of_titan/DS Assignment/Attack-on-Titan-Eren-1200x675.jpg"/>
         </Property>
       </Properties>
       <Constraints>

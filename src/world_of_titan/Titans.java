@@ -91,7 +91,7 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         getContentPane().add(generate, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 512, -1, -1));
 
         back.setBackground(new java.awt.Color(255, 255, 204));
-        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\Assignment\\src\\assignment\\DS Assignment\\icons8-reply-arrow-30.png")); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/world_of_titan/DS Assignment/icons8-reply-arrow-30.png"))); // NOI18N
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
@@ -115,10 +115,11 @@ private java.util.LinkedList<Object> list = new java.util.LinkedList();
         getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 220, -1));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hongb\\OneDrive\\Documents\\NetBeansProjects\\World_of_Titan\\src\\world_of_titan\\DS Assignment\\Attack-on-Titan-Eren-1200x675.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/world_of_titan/DS Assignment/Attack-on-Titan-Eren-1200x675.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 600));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
      public class Titan implements Comparable<Titan> {
 

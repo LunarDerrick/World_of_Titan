@@ -38,11 +38,15 @@ public class Attributes extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         soldier = new javax.swing.JTextArea();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ability.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         ability.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(ability, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 161, 143, -1));
 
         value.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         value.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -51,16 +55,24 @@ public class Attributes extends javax.swing.JFrame {
                 valueActionPerformed(evt);
             }
         });
+        getContentPane().add(value, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 223, 143, -1));
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Finding ability:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 164, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Value:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 226, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Soldier(s):");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 288, -1, -1));
 
+        search.setBackground(new java.awt.Color(255, 255, 204));
         search.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         search.setText("Search");
         search.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +80,7 @@ public class Attributes extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
+        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 425, -1, -1));
 
         soldier.setEditable(false);
         soldier.setColumns(10);
@@ -76,61 +89,47 @@ public class Attributes extends javax.swing.JFrame {
         soldier.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(soldier);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(search)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(ability, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                                .addComponent(value))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(82, 82, 82)))
-                .addContainerGap(149, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(search)
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 288, 262, -1));
+
+        jLabel5.setFont(new java.awt.Font("Viner Hand ITC", 1, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Search");
+        jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(255, 255, 255)));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 330, 100));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/world_of_titan/DS Assignment/Attack-on-Titan-Season-3.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 590));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
         String store ="";
+        boolean a;
+  
        if(ability.getText().equals("")||value.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please Enter All Data!","Error",JOptionPane.ERROR_MESSAGE);
         }else if(Ally.jTable1==null){
             JOptionPane.showMessageDialog(null,"No soldier(s) found!","Error",JOptionPane.ERROR_MESSAGE);
-        }else{
-        for(int i = 0;i<=Ally.jTable1.getColumnCount();i++){
-           for(int j = 0;j<=Ally.jTable1.getRowCount();j++){
+        }else if(Ally.jTable1!=null){
+           for(int i = 0;i<Ally.jTable1.getColumnCount();i++){
+            if(!ability.getText().equalsIgnoreCase(Ally.jTable1.getColumnName(i))){
+                 a = false;
+            }else{
+                a=true;
+            }
+        }
+           if(a = false){
+            JOptionPane.showMessageDialog(null,"No such ability!","Error",JOptionPane.ERROR_MESSAGE);
+           }else{
+        for(int i = 0;i<Ally.jTable1.getColumnCount();i++){
+           for(int j = 0;j<Ally.jTable1.getRowCount();j++){
                if(ability.getText().equalsIgnoreCase(Ally.jTable1.getColumnName(i)) && value.getText().equals(Ally.jTable1.getValueAt(j, i))){
                   
                    list.add(Ally.jTable1.getValueAt(j, 0));
@@ -143,6 +142,7 @@ public class Attributes extends javax.swing.JFrame {
          }
        }
      }
+        } 
     }//GEN-LAST:event_searchActionPerformed
 
     private void valueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valueActionPerformed
@@ -190,6 +190,8 @@ public class Attributes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton search;
     private javax.swing.JTextArea soldier;

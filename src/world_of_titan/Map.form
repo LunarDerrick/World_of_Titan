@@ -39,7 +39,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\hongb\OneDrive\Documents\NetBeansProjects\World_of_Titan\src\world_of_titan\DS Assignment\Screenshot 2022-06-16 002352.png"/>
+          <Image iconType="3" name="/world_of_titan/DS Assignment/Screenshot 2022-06-16 002352.png"/>
         </Property>
       </Properties>
     </Component>
