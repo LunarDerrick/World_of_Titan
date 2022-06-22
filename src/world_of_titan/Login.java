@@ -153,6 +153,9 @@ public class Login extends javax.swing.JFrame {
             m.show();
             
             dispose();
+      String filepath = "Guren-No-Yumiya-_osanime.com_.wav";  
+      music background  =  new music();
+      background.playMusic(filepath);
         }else{
             JOptionPane.showMessageDialog(null,"Invalid username and password","Login Error",JOptionPane.ERROR_MESSAGE);
             user.setText(null);
@@ -204,6 +207,8 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
+        
+     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
