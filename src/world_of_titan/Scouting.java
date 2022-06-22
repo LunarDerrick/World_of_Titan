@@ -199,7 +199,7 @@ public class Scouting {
                 input = sc.nextInt();
                 incorrectInput = false;
                 if (input < 0 || input >= map.size()) {
-                    System.out.println("Exceed range");
+                    Killing.best.setText("Exceed range");
                     System.out.printf("Currently available: 0~%d\n", map.size() - 1);
                     incorrectInput = true;
                 }
@@ -340,19 +340,22 @@ public class Scouting {
         do {
             incorrectInput = false;
             // collect raw input
-            Scanner sc = new Scanner(System.in);
-            System.out.print("\nEnter location(s) of Titan: "); // input example: 1,3,5 (no space)
-            input = sc.nextLine();
-            String[] inputStr = input.split(",");
+            // input example: 1 3 5 (space)
+            input = Killing.location.getText();
+            String[] inputStr = input.split(" ");
             // convert input to integer array
             inputList = new int[inputStr.length];
+            if(inputStr.length==0){
+                Killing.best.setText("Please enter the location(s)");
+            }else{
             for (int i = 0; i < inputStr.length; i++) {
                 if (isNumeric(inputStr[i]) && withinRange(inputStr[i])) {
                     inputList[i] = Integer.parseInt(inputStr[i]);
                 } else {
-                    System.out.println(getErrorMessage());
+                    Killing.best.setText(getErrorMessage());
                     incorrectInput = true;
                 }
+            }
             }
         } while (incorrectInput);
 
@@ -434,11 +437,13 @@ public class Scouting {
             current = prevVertex[current];
         }
 
-        System.out.println("Best path:");
+        String store = "";
         for (int i = path.size() - 1; i > 0; i--) {
-            System.out.print(path.get(i) + "-->");
+            store+=(path.get(i) + "-->");
         }
-        System.out.println(path.get(0));
+        store+=(path.get(0))+"\n";
+        
+        Killing.best.setText(store);
 
         boolean hasSix = false;
         for (int element : path) {
@@ -461,10 +466,11 @@ public class Scouting {
             for (int i = path.size() - 1; i > 0; i--) {
                 System.out.print(path.get(i) + "-->");
             }
-            System.out.println(path.get(0));
+            store+=(path.get(0));
+            Killing.best.setText(store);
         }
 
-        System.out.println("time passed: " + time + "\n");
+        Killing.time.setText(time+"");
     }
 
     /**
@@ -477,7 +483,7 @@ public class Scouting {
         try {
             Integer.parseInt(text);
         } catch (NumberFormatException e) {
-            error = "Positive integer only";
+            error = "Invalid format";
             return false;
         }
         return true;
