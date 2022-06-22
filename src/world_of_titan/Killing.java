@@ -4,6 +4,8 @@
  */
 package world_of_titan;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hongb
@@ -106,7 +108,7 @@ public class Killing extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
         jButton3.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
@@ -166,13 +168,14 @@ public class Killing extends javax.swing.JFrame {
         // convert input to integer array
         inputList = new int[inputStr.length];
         if (inputStr.length == 0) {
-            Killing.best.setText("Please enter the location(s)");
+            JOptionPane.showMessageDialog(null,"Please Enter The Location(s)!","Error",JOptionPane.ERROR_MESSAGE);
         } else {
             for (int i = 0; i < inputStr.length; i++) {
                 if (scouting.isNumeric(inputStr[i]) && scouting.withinRange(inputStr[i])) {
                     inputList[i] = Integer.parseInt(inputStr[i]);
                 } else {
-                    Killing.best.setText(scouting.getErrorMessage());
+                   JOptionPane.showMessageDialog(null,scouting.getErrorMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                   location.setText("");
                     hasError = true;
                     break;
                 }
@@ -196,7 +199,8 @@ public class Killing extends javax.swing.JFrame {
                     
                     scouting.BFS(value);
                 } else {
-                    best.setText(scouting.getErrorMessage());
+                    JOptionPane.showMessageDialog(null,scouting.getErrorMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                    location.setText("");
                 }
     }//GEN-LAST:event_jButton3ActionPerformed
 

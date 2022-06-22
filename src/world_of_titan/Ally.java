@@ -220,7 +220,7 @@ public class Ally extends javax.swing.JFrame {
         }else{
             try{
             DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-            String[] store = new String[8];
+            Object[] store = new Object[8];
             String[] store2 = characteristics.getText().split(" ");
             if(store2.length<7){
              JOptionPane.showMessageDialog(null,"Please Enter All Data!","Error",JOptionPane.ERROR_MESSAGE);
@@ -229,9 +229,9 @@ public class Ally extends javax.swing.JFrame {
             }else{
              store[0]=name.getText();
            for(int i = 1;i<=store2.length;i++){
-               store[i]=store2[i-1];
+               store[i]=Integer.parseInt(store2[i-1]);
            }
-                      
+                  
             tblModel.addRow(store);
             
              name.setText("");

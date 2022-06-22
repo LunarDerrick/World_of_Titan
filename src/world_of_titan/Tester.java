@@ -34,7 +34,7 @@ public class Tester extends Application {
         evaluation.findKillPriority();
         
         // attempt GUI using javafx
-        launch(args);
+        
         System.out.println("");
         
         // tester for Best path to kill Titan 1
