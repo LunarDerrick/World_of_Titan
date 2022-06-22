@@ -45,6 +45,7 @@ public class Security extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 0));
 
+        enter.setBackground(new java.awt.Color(255, 255, 51));
         enter.setFont(new java.awt.Font("Viner Hand ITC", 0, 12)); // NOI18N
         enter.setText("Enter");
         enter.addActionListener(new java.awt.event.ActionListener() {

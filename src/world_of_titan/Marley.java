@@ -236,7 +236,7 @@ public class Marley extends javax.swing.JFrame {
         Security e = new Security();
         e.show();
         
-        
+        dispose();
     }//GEN-LAST:event_encryptionActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
