@@ -173,7 +173,7 @@ public class Encryption extends javax.swing.JFrame {
         if(message.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please Enter The Message!","Error",JOptionPane.ERROR_MESSAGE);
         }else{
-            String encryptedMsg = Cipher.doDecryption(message.getText());
+            String encryptedMsg = Cipher.doDecryption(message.getText().toUpperCase());
             encrypted.setText(encryptedMsg);
         }
     }//GEN-LAST:event_decryptActionPerformed
