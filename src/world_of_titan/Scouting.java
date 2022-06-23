@@ -464,7 +464,7 @@ public class Scouting {
                 }
             }
             for (int i = path.size() - 1; i > 0; i--) {
-                System.out.print(path.get(i) + "-->");
+                store+=(path.get(i) + "-->");
             }
             store += (path.get(0));
             Killing.best.setText(store);
