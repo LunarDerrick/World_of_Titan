@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  * @author hongb
  */
 public class Attributes extends javax.swing.JFrame {
- private java.util.LinkedList<Object> list = new java.util.LinkedList();
+    private java.util.LinkedList<Object> list = new java.util.LinkedList();
     /**
      * Creates new form Attributes
      */
     public Attributes() {
         initComponents();
         soldier.setEditable(false);
-        
+
     }
 
     /**
@@ -111,7 +111,7 @@ public class Attributes extends javax.swing.JFrame {
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
         String store ="";
-        boolean a;
+        boolean a = false;
   
        if(ability.getText().equals("")||value.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please Enter All Data!","Error",JOptionPane.ERROR_MESSAGE);
@@ -123,15 +123,15 @@ public class Attributes extends javax.swing.JFrame {
                  a = false;
             }else{
                 a=true;
+                break;
             }
         }
-           if(a = false){
+           if(a == false){
             JOptionPane.showMessageDialog(null,"No such ability!","Error",JOptionPane.ERROR_MESSAGE);
            }else{
         for(int i = 0;i<Ally.jTable1.getColumnCount();i++){
            for(int j = 0;j<Ally.jTable1.getRowCount();j++){
-               if(ability.getText().equalsIgnoreCase(Ally.jTable1.getColumnName(i)) && value.getText().equals(Ally.jTable1.getValueAt(j, i))){
-                  
+               if(ability.getText().equalsIgnoreCase(Ally.jTable1.getColumnName(i)) && value.getText().equals(Ally.jTable1.getValueAt(j, i).toString())){
                    list.add(Ally.jTable1.getValueAt(j, 0));
               while(!list.isEmpty()){
                   store += list.pop() +"\n";
