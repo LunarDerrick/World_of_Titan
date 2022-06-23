@@ -184,7 +184,7 @@ public class Encryption extends javax.swing.JFrame {
         if(Encryption.encrypted.getText().equals("")){
             JOptionPane.showMessageDialog(null,"No message to be inserted!","Error",JOptionPane.ERROR_MESSAGE);
         }else{
-        Marley.marley.setText(Encryption.encrypted.getText());
+        Marley.marley.setText(Encryption.encrypted.getText().toUpperCase());
         m.setVisible(true);
         }
     }//GEN-LAST:event_copyActionPerformed
